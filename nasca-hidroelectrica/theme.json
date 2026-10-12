@@ -159,49 +159,49 @@
         {
           "slug": "x-small",
           "name": "Etiqueta",
-          "size": "12px",
+          "size": "13px",
           "fluid": false
         },
         {
           "slug": "small",
           "name": "Pequeño",
-          "size": "14px",
+          "size": "15px",
           "fluid": false
         },
         {
           "slug": "medium",
           "name": "Normal",
-          "size": "15px",
+          "size": "16px",
           "fluid": false
         },
         {
           "slug": "large",
           "name": "Grande",
-          "size": "17px",
+          "size": "19px",
           "fluid": false
         },
         {
           "slug": "x-large",
           "name": "Título",
-          "size": "28px",
+          "size": "30px",
           "fluid": false
         },
         {
           "slug": "xx-large",
           "name": "Título grande",
-          "size": "56px",
+          "size": "60px",
           "fluid": false
         },
         {
           "slug": "display",
           "name": "Display (hero)",
-          "size": "96px",
+          "size": "104px",
           "fluid": false
         },
         {
           "slug": "stat",
           "name": "Cifra",
-          "size": "48px",
+          "size": "52px",
           "fluid": false
         }
       ]
@@ -270,7 +270,7 @@
     },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--body)",
-      "fontSize": "15px",
+      "fontSize": "16px",
       "fontWeight": "400",
       "lineHeight": "1.6"
     },
@@ -334,7 +334,7 @@
         },
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--body)",
-          "fontSize": "15px",
+          "fontSize": "16px",
           "fontWeight": "600"
         },
         "border": {
@@ -392,7 +392,7 @@
       },
       "core/navigation": {
         "typography": {
-          "fontSize": "15px",
+          "fontSize": "16px",
           "fontWeight": "400"
         }
       },
