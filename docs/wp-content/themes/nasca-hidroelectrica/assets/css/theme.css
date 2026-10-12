@@ -485,3 +485,5 @@ main.wp-block-group > * + *, .wp-block-post-content > * + * { margin-block-start
 .wp-block-post-content > .wp-block-group > * + * { margin-block-start: revert !important; }
 .is-style-eyebrow + h1, .is-style-eyebrow + h2, .is-style-eyebrow + .wp-block-columns, .is-style-eyebrow + .nasca-impacto { margin-top: 1.25rem !important; }
 .nasca-impacto { margin-top: 2rem !important; }
+.nasca-diagram { margin-top: 2.5rem !important; }
+.nasca-steps { margin-top: 3rem !important; }
