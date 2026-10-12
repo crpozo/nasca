@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" role="img" aria-label="Esquema ilustrativo de las 14 comunidades del Valle de Intag">
+  <path class="river" d="M690 80 C560 130 470 60 440 150 C410 240 560 200 690 260 C780 300 520 330 420 300 C320 270 200 340 180 400 C160 470 260 500 340 480 C420 460 380 420 330 540" fill="none" stroke="rgba(133,180,150,.45)" stroke-width="2"/>
+  <g font-family="Raleway, sans-serif" font-size="18" fill="rgba(255,255,255,.55)">
+    <text x="310" y="195">San Francisco · Santa Rosa</text>
+    <text x="205" y="470">Limones · Cielo Verde</text>
+  </g>
+  <g font-family="Raleway, sans-serif" font-weight="700" font-size="13" text-anchor="middle">
+    <g class="pin pin-aid"><circle cx="300" cy="148" r="15" fill="#E9DDF7"/><text x="300" y="152" fill="#4C2A85">1</text></g>
+    <g class="pin pin-aid"><circle cx="410" cy="162" r="15" fill="#E9DDF7"/><text x="410" y="166" fill="#4C2A85">2</text></g>
+    <g class="pin pin-aid"><circle cx="486" cy="243" r="15" fill="#E9DDF7"/><text x="486" y="247" fill="#4C2A85">3</text></g>
+    <g class="pin pin-aid"><circle cx="362" cy="243" r="15" fill="#E9DDF7"/><text x="362" y="247" fill="#4C2A85">4</text></g>
+    <g class="pin pin-aid"><circle cx="252" cy="333" r="15" fill="#E9DDF7"/><text x="252" y="337" fill="#4C2A85">5</text></g>
+    <g class="pin pin-aid"><circle cx="390" cy="353" r="15" fill="#E9DDF7"/><text x="390" y="357" fill="#4C2A85">6</text></g>
+    <g class="pin pin-aid"><circle cx="402" cy="465" r="15" fill="#E9DDF7"/><text x="402" y="469" fill="#4C2A85">7</text></g>
+    <g class="pin pin-aid"><circle cx="224" cy="478" r="15" fill="#E9DDF7"/><text x="224" y="482" fill="#4C2A85">8</text></g>
+    <g class="pin pin-aid"><circle cx="178" cy="535" r="15" fill="#E9DDF7"/><text x="178" y="539" fill="#4C2A85">9</text></g>
+    <g class="pin pin-tec"><circle cx="508" cy="125" r="15" fill="#EEF2A8"/><text x="508" y="129" fill="#1C1F1C">10</text></g>
+    <g class="pin pin-tec"><circle cx="560" cy="325" r="15" fill="#EEF2A8"/><text x="560" y="329" fill="#1C1F1C">11</text></g>
+    <g class="pin pin-tec"><circle cx="555" cy="465" r="15" fill="#EEF2A8"/><text x="555" y="469" fill="#1C1F1C">12</text></g>
+    <g class="pin pin-tec"><circle cx="135" cy="393" r="15" fill="#EEF2A8"/><text x="135" y="397" fill="#1C1F1C">13</text></g>
+    <g class="pin pin-tec"><circle cx="618" cy="545" r="15" fill="#EEF2A8"/><text x="618" y="549" fill="#1C1F1C">14</text></g>
+  </g>
+</svg>

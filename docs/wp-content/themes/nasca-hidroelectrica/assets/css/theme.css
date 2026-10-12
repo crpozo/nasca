@@ -1,0 +1,266 @@
+/* =========================================================
+   Nasca Hidroeléctrica — estilos complementarios a theme.json
+   Todo lo que theme.json no puede expresar (flechas, línea de
+   tiempo, mapa, pestañas, hover) vive aquí.
+   ========================================================= */
+
+:root {
+  --nasca-arrow: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7M8 7h9v9'/></svg>");
+  --nasca-arrow-right: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12h14M13 6l6 6-6 6'/></svg>");
+}
+
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img { height: auto; max-width: 100%; }
+
+/* Compensa la cabecera fija */
+.site-header { position: sticky; top: 0; z-index: 50; }
+.admin-bar .site-header { top: 32px; }
+@media (max-width: 782px) { .admin-bar .site-header { top: 46px; } }
+
+/* ---------- Iconos de flecha ---------- */
+.nasca-arrow::after,
+.is-style-arrow .wp-block-button__link::after,
+.is-style-arrow-ghost .wp-block-button__link::after,
+.is-style-link-arrow .wp-block-button__link::after {
+  content: "";
+  display: inline-block;
+  width: 1em; height: 1em;
+  margin-left: 0.6em;
+  vertical-align: -0.15em;
+  background-color: currentColor;
+  -webkit-mask: var(--nasca-arrow) center / contain no-repeat;
+  mask: var(--nasca-arrow) center / contain no-repeat;
+  transition: transform .25s ease;
+}
+.is-style-link-arrow .wp-block-button__link::after {
+  -webkit-mask-image: var(--nasca-arrow-right);
+  mask-image: var(--nasca-arrow-right);
+}
+.nasca-arrow:hover::after,
+.wp-block-button:hover .wp-block-button__link::after { transform: translate(2px, -2px); }
+.is-style-link-arrow:hover .wp-block-button__link::after { transform: translateX(3px); }
+
+/* ---------- Botones ---------- */
+.wp-block-button__link { transition: background-color .25s ease, color .25s ease, border-color .25s ease; line-height: 1.2; }
+.is-style-arrow-ghost .wp-block-button__link {
+  background: transparent !important;
+  border: 1px solid currentColor;
+  color: inherit;
+  font-weight: 500;
+}
+.is-style-arrow-ghost .wp-block-button__link:hover { background: rgba(255,255,255,0.08) !important; }
+.is-style-link-arrow .wp-block-button__link {
+  background: transparent !important;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  font-weight: 600;
+}
+.is-style-link-arrow .wp-block-button__link:hover { text-decoration: none; }
+.has-primary-background-color.wp-block-button__link:hover,
+.wp-block-button__link.has-primary-background-color:hover { background-color: var(--wp--preset--color--primary) !important; color: var(--wp--preset--color--accent) !important; }
+
+/* Botón "proximamente" morado contorno */
+.nasca-btn-outline-primary .wp-block-button__link {
+  background: transparent !important;
+  border: 1px solid var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--primary);
+  opacity: .75;
+  font-weight: 500;
+}
+.nasca-btn-outline-primary .wp-block-button__link:hover { opacity: 1; background: var(--wp--preset--color--primary-light) !important; }
+
+/* ---------- Etiqueta de sección (eyebrow) ---------- */
+.is-style-eyebrow {
+  display: flex; align-items: center; gap: 1.25rem;
+  font-size: var(--wp--preset--font-size--x-small);
+  font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--wp--preset--color--contrast-3);
+}
+.is-style-eyebrow::before { content: ""; width: 32px; height: 2px; background: currentColor; flex: none; }
+.is-style-eyebrow.has-accent-color::before { background: var(--wp--preset--color--accent); }
+.has-contrast-background-color .is-style-eyebrow,
+.has-contrast-2-background-color .is-style-eyebrow,
+.wp-block-cover .is-style-eyebrow { color: var(--wp--preset--color--accent); }
+.wp-block-cover .is-style-eyebrow::before { background: var(--wp--preset--color--accent); }
+
+/* ---------- Cifras ---------- */
+.is-style-stat,
+h2.is-style-stat, h3.is-style-stat {
+  font-size: var(--wp--preset--font-size--stat);
+  font-weight: 400; letter-spacing: -0.03em; line-height: 1; margin: 0;
+}
+.is-style-stat-label {
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  margin-top: .75rem;
+}
+.wp-block-cover .is-style-stat-label { color: var(--wp--preset--color--accent); }
+
+/* ---------- Chips ---------- */
+.is-style-tag, .is-style-tag-filled {
+  display: inline-block;
+  font-size: var(--wp--preset--font-size--x-small);
+  font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  padding: .4rem .9rem; border-radius: 999px;
+  border: 1px solid var(--wp--preset--color--line);
+  background: var(--wp--preset--color--base);
+  color: var(--wp--preset--color--text-muted);
+  margin: 0;
+}
+.is-style-tag-filled { background: var(--wp--preset--color--primary); color: #fff; border-color: var(--wp--preset--color--primary); }
+
+/* ---------- Tarjetas ---------- */
+.is-style-card {
+  background: var(--wp--preset--color--base-2);
+  border: 1px solid var(--wp--preset--color--line);
+  border-radius: var(--wp--custom--radius--card);
+  box-shadow: 0 1px 2px rgba(0,0,0,.03);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.is-style-card:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(20,24,20,.06); }
+.is-style-card.has-background { background-color: var(--wp--preset--color--base-2); }
+.is-style-card.has-contrast-3-background-color,
+.is-style-card.has-contrast-background-color { border-color: transparent; }
+
+/* Icono en círculo */
+.is-style-icon-circle {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--wp--preset--color--primary-light);
+  color: var(--wp--preset--color--primary);
+  padding: 0 !important; margin: 0;
+}
+.is-style-icon-circle.has-accent-2-background-color { color: var(--wp--preset--color--contrast-3); }
+.is-style-icon-circle svg, .is-style-icon-circle img { width: 26px; height: 26px; }
+.is-style-icon-circle p, .is-style-icon-circle figure { margin: 0; line-height: 0; }
+.is-style-icon-circle.is-small { width: 52px; height: 52px; }
+
+/* ---------- Listas ---------- */
+.is-style-checks { list-style: none; padding-left: 0; margin: 0; }
+.is-style-checks li { padding-left: 1.6em; position: relative; margin-bottom: .35rem; }
+.is-style-checks li::before { content: "✓"; position: absolute; left: 0; top: 0; font-weight: 700; }
+
+.is-style-footer-links { list-style: none; padding-left: 0; margin: 0; }
+.is-style-footer-links li { margin-bottom: .9rem; color: var(--wp--preset--color--text-muted-dark); }
+.is-style-footer-links li a { color: inherit; transition: color .2s ease; }
+.is-style-footer-links li a:hover { color: var(--wp--preset--color--accent); text-decoration: none; }
+.is-style-footer-links li strong, .is-style-footer-links li strong a { color: var(--wp--preset--color--accent); font-weight: 600; }
+
+/* Pestañas de comunidades */
+.is-style-tabs { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.is-style-tabs li { color: var(--wp--preset--color--text-muted-dark); font-weight: 500; padding-bottom: .35rem; border-bottom: 2px solid transparent; cursor: pointer; }
+.is-style-tabs li a { color: inherit; }
+.is-style-tabs li a:hover { text-decoration: none; }
+.is-style-tabs li.is-active, .is-style-tabs li.is-active a { color: var(--wp--preset--color--primary); border-color: var(--wp--preset--color--primary); }
+.is-style-tabs li strong, .is-style-tabs li strong a { color: var(--wp--preset--color--primary); }
+
+/* Paneles de comunidades (JS) */
+.nasca-community-panel[hidden] { display: none; }
+
+/* ---------- Barra de progreso del censo ---------- */
+.nasca-progress { height: 4px; background: var(--wp--preset--color--line); border-radius: 999px; overflow: hidden; margin: 1rem 0 2rem; }
+.nasca-progress > span { display: block; height: 100%; background: var(--wp--preset--color--primary); border-radius: 999px; width: var(--value, 60%); }
+
+/* ---------- Línea de tiempo ---------- */
+.is-style-timeline { position: relative; gap: 2rem !important; padding-top: 1.25rem; }
+.is-style-timeline::before {
+  content: ""; position: absolute; left: 7px; right: 7px; top: calc(1.25rem + 7px);
+  height: 2px; background: rgba(255,255,255,.45);
+}
+.is-style-timeline > .wp-block-column { position: relative; padding-top: 2.25rem; }
+.is-style-timeline > .wp-block-column::before {
+  content: ""; position: absolute; left: 0; top: 0;
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid var(--wp--preset--color--accent); background: var(--wp--preset--color--primary);
+  box-sizing: border-box;
+}
+.is-style-timeline > .wp-block-column.is-current::before { background: var(--wp--preset--color--accent); }
+.is-style-timeline > .wp-block-column.is-future::before { border-color: rgba(255,255,255,.6); }
+.is-style-timeline > .wp-block-column.is-future { opacity: .65; }
+.is-style-timeline .nasca-timeline-date { font-weight: 700; font-size: var(--wp--preset--font-size--small); margin-bottom: .5rem; color: var(--wp--preset--color--accent); }
+.is-style-timeline .nasca-timeline-date.has-text-color { color: inherit; }
+@media (max-width: 781px) {
+  .is-style-timeline::before { display: none; }
+  .is-style-timeline > .wp-block-column { padding-top: 0; padding-left: 2rem; border-left: 2px solid rgba(255,255,255,.45); padding-bottom: 1rem; }
+  .is-style-timeline > .wp-block-column::before { left: -8px; top: 0; }
+}
+
+/* ---------- Hero ---------- */
+.is-style-hero.wp-block-cover { min-height: calc(100vh - 160px); }
+.is-style-hero .wp-block-cover__inner-container { width: 100%; }
+.nasca-hero-title { max-width: 12ch; }
+
+/* ---------- Mapa ilustrativo ---------- */
+.nasca-map { position: relative; border-radius: var(--wp--custom--radius--card); overflow: hidden; }
+.nasca-map svg { width: 100%; height: auto; display: block; }
+.nasca-map .pin { font-family: var(--wp--preset--font-family--body); font-weight: 700; }
+.nasca-map .pin-aid circle { fill: #E9DDF7; }
+.nasca-map .pin-aid text { fill: #4C2A85; }
+.nasca-map .pin-tec circle { fill: #EEF2A8; }
+.nasca-map .pin-tec text { fill: #1C1F1C; }
+.nasca-map .label { font-family: var(--wp--preset--font-family--body); font-size: 15px; fill: rgba(255,255,255,.55); }
+.nasca-map .river { fill: none; stroke: rgba(133,180,150,.45); stroke-width: 2; }
+
+/* ---------- Cabecera ---------- */
+.nasca-topbar { font-size: var(--wp--preset--font-size--small); }
+.nasca-topbar a { color: var(--wp--preset--color--text-muted-dark); }
+.nasca-topbar a:hover { color: var(--wp--preset--color--white); text-decoration: none; }
+.nasca-topbar .nasca-arrow::after { width: .8em; height: .8em; margin-left: .3em; }
+.site-header .wp-block-navigation a { color: var(--wp--preset--color--text-muted-dark); transition: color .2s ease; }
+.site-header .wp-block-navigation a:hover,
+.site-header .wp-block-navigation .current-menu-item > a { color: var(--wp--preset--color--white); text-decoration: none; }
+.site-header .wp-block-site-title a { color: var(--wp--preset--color--white); line-height: 1; }
+.site-header .wp-block-site-tagline { color: var(--wp--preset--color--white); margin-top: .1rem; }
+.nasca-logo { line-height: 1; }
+.nasca-logo .wp-block-site-logo img { max-height: 56px; width: auto; }
+.wp-block-navigation__responsive-container.is-menu-open { background: var(--wp--preset--color--contrast-2); color: #fff; }
+.wp-block-navigation__responsive-container-open, .wp-block-navigation__responsive-container-close { color: #fff; }
+
+/* ---------- Pie ---------- */
+.site-footer { color: var(--wp--preset--color--text-muted-dark); }
+.site-footer h2, .site-footer h3, .site-footer h4 { color: #fff; }
+.site-footer .nasca-footer-title { font-family: var(--wp--preset--font-family--body); font-weight: 700; font-size: var(--wp--preset--font-size--small); text-transform: none; letter-spacing: 0; color: #fff; margin-bottom: 1.25rem; }
+.site-footer a { color: inherit; }
+.site-footer a:hover { color: var(--wp--preset--color--accent); text-decoration: none; }
+.site-footer .nasca-social a { color: var(--wp--preset--color--accent); font-weight: 500; }
+.site-footer .wp-block-separator { border-color: rgba(255,255,255,.12); opacity: 1; margin: 2.5rem 0; }
+.site-footer .nasca-legal-links a { color: var(--wp--preset--color--text-muted-dark); }
+.site-footer .nasca-legal-links strong, .site-footer .nasca-legal-links strong a { color: #fff; font-weight: 700; }
+.site-footer .wp-block-site-title a { color: #fff; }
+.site-footer .wp-block-site-tagline { color: #fff; }
+
+/* ---------- Utilidades ---------- */
+.nasca-muted { color: var(--wp--preset--color--text-muted); }
+.nasca-muted-dark { color: var(--wp--preset--color--text-muted-dark); }
+.nasca-white { color: #fff; }
+.nasca-max-50 { max-width: 50ch; }
+.nasca-max-36 { max-width: 36ch; }
+.nasca-max-30 { max-width: 30ch; }
+.nasca-max-24 { max-width: 24ch; }
+.nasca-max-14 { max-width: 14ch; }
+.nasca-fill { height: 100%; }
+.nasca-quote { font-family: var(--wp--preset--font-family--heading); font-size: var(--wp--preset--font-size--xx-large); line-height: 1.1; letter-spacing: -0.02em; max-width: 24ch; color: var(--wp--preset--color--base); }
+.nasca-cite { font-size: var(--wp--preset--font-size--x-small); letter-spacing: .06em; text-transform: uppercase; color: var(--wp--preset--color--accent); }
+.nasca-border-top { border-top: 1px solid var(--wp--preset--color--line); }
+.nasca-divider-left { border-left: 1px solid var(--wp--preset--color--line); padding-left: 2rem; }
+.wp-block-cover .nasca-pill-cta { margin-top: -2.5rem; }
+.nasca-underline-link { border-bottom: 2px solid currentColor; padding-bottom: .35rem; font-weight: 700; }
+
+/* Entradas (blog) */
+.nasca-post-card .wp-block-post-title { font-size: var(--wp--preset--font-size--large); }
+.nasca-post-card .wp-block-post-featured-image img { border-radius: var(--wp--custom--radius--card); aspect-ratio: 4/3; object-fit: cover; }
+
+@media (max-width: 600px) {
+  .is-style-stat { font-size: 3rem; }
+  .nasca-quote { font-size: 2rem; }
+}
+
+/* Si hay logo subido en Apariencia > Editor > Logo, se oculta el texto de respaldo */
+.nasca-logo .wp-block-site-logo ~ .wp-block-site-title,
+.nasca-logo .wp-block-site-logo ~ .wp-block-site-tagline { display: none; }
+@media (max-width: 781px) {
+  .nasca-divider-left { border-left: 0; padding-left: 0; border-top: 1px solid var(--wp--preset--color--line); padding-top: 1.5rem; }
+}
