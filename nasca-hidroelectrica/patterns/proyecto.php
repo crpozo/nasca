@@ -27,7 +27,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-stats.jpg' );
 			<!-- wp:column {"verticalAlignment":"bottom","width":"40%"} -->
 			<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:40%">
 				<!-- wp:paragraph {"className":"nasca-max-36","fontSize":"large","style":{"typography":{"fontWeight":"300"}}} -->
-				<p class="nasca-max-36 has-large-font-size" style="font-weight:300">Ingeniería de pasada y trayectoria técnica al servicio del país.</p>
+				<p class="nasca-max-36 has-large-font-size" style="font-weight:300">Trayectoria, experiencia y compromiso con el desarrollo del país.</p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:column -->
@@ -36,20 +36,20 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-stats.jpg' );
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":520,"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"1800px"}} -->
+	<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":480,"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"1800px"}} -->
 	<div class="wp-block-cover" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter);min-height:520px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><div class="wp-block-cover__inner-container">
 		<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
 		<div class="wp-block-columns">
 			<!-- wp:column -->
 			<div class="wp-block-column">
 				<!-- wp:heading {"level":3,"className":"is-style-stat","textColor":"base"} --><h3 class="wp-block-heading is-style-stat has-base-color has-text-color">48.5 MW</h3><!-- /wp:heading -->
-				<!-- wp:paragraph {"className":"is-style-stat-label","textColor":"accent"} --><p class="is-style-stat-label has-accent-color has-text-color">Energía limpia generada</p><!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"is-style-stat-label","textColor":"accent"} --><p class="is-style-stat-label has-accent-color has-text-color">Capacidad instalada</p><!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:column -->
 			<!-- wp:column -->
 			<div class="wp-block-column">
-				<!-- wp:heading {"level":3,"className":"is-style-stat","textColor":"base"} --><h3 class="wp-block-heading is-style-stat has-base-color has-text-color">0</h3><!-- /wp:heading -->
-				<!-- wp:paragraph {"className":"is-style-stat-label","textColor":"accent"} --><p class="is-style-stat-label has-accent-color has-text-color">Embalses</p><!-- /wp:paragraph -->
+				<!-- wp:heading {"level":3,"className":"is-style-stat","textColor":"base"} --><h3 class="wp-block-heading is-style-stat has-base-color has-text-color">342 GWh</h3><!-- /wp:heading -->
+				<!-- wp:paragraph {"className":"is-style-stat-label","textColor":"accent"} --><p class="is-style-stat-label has-accent-color has-text-color">Energía limpia generada</p><!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:column -->
 			<!-- wp:column -->

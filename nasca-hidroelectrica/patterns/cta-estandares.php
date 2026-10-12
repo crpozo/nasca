@@ -6,8 +6,8 @@
  * Description: Banda de color vino con título, texto y dos botones.
  */
 ?>
-<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"accent-3","textColor":"base","layout":{"type":"constrained","contentSize":"1800px"}} -->
-<section class="wp-block-group has-base-color has-accent-3-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--custom--gutter)">
+<!-- wp:group {"tagName":"section","className":"nasca-cta","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"accent-3","textColor":"base","layout":{"type":"constrained","contentSize":"1800px"}} -->
+<section class="wp-block-group nasca-cta has-base-color has-accent-3-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--custom--gutter)">
 	<!-- wp:columns {"verticalAlignment":"center"} -->
 	<div class="wp-block-columns are-vertically-aligned-center">
 		<!-- wp:column {"verticalAlignment":"center","width":"66%"} -->

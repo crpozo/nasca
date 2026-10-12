@@ -29,8 +29,8 @@ $map = esc_url( get_template_directory_uri() . '/assets/images/mapa-intag.svg' )
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:columns {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"},"blockGap":{"left":"var:preset|spacing|30"}}}} -->
-	<div class="wp-block-columns" style="margin-top:var(--wp--preset--spacing--40)">
+	<!-- wp:columns {"className":"nasca-sost-grid","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"},"blockGap":{"left":"var:preset|spacing|30"}}}} -->
+	<div class="wp-block-columns nasca-sost-grid" style="margin-top:var(--wp--preset--spacing--40)">
 
 		<!-- wp:column {"width":"43%"} -->
 		<div class="wp-block-column" style="flex-basis:43%">

@@ -264,3 +264,68 @@ h2.is-style-stat, h3.is-style-stat {
 @media (max-width: 781px) {
   .nasca-divider-left { border-left: 0; padding-left: 0; border-top: 1px solid var(--wp--preset--color--line); padding-top: 1.5rem; }
 }
+
+/* =========================================================
+   Responsive — tablet (≤1100px) y móvil (≤781px / ≤480px)
+   ========================================================= */
+.is-style-stat, h2.is-style-stat, h3.is-style-stat, h4.is-style-stat { white-space: nowrap; }
+
+@media (max-width: 1100px) {
+  /* Cabecera: logo + botón en la primera fila, menú centrado debajo */
+  .site-header .wp-block-navigation { order: 3; flex-basis: 100%; justify-content: center; }
+  .site-header .wp-block-navigation .wp-block-navigation__container { justify-content: center; }
+  .site-header .wp-block-buttons { margin-left: auto; }
+  /* Cifras un poco más pequeñas */
+  .is-style-stat, h2.is-style-stat, h3.is-style-stat { font-size: clamp(2.4rem, 5.2vw, 4.5rem); }
+  /* Títulos de tarjeta: no partir palabras */
+  .is-style-card .has-xx-large-font-size { font-size: clamp(1.7rem, 3.6vw, 2.75rem) !important; }
+  /* Mapa encima de la tarjeta de comunidad */
+  .nasca-sost-grid.wp-block-columns { flex-wrap: wrap !important; }
+  .nasca-sost-grid > .wp-block-column { flex-basis: 100% !important; }
+  .nasca-sost-grid .nasca-map { min-height: 0; }
+  /* CTA vino: texto arriba, botones abajo a la izquierda */
+  .nasca-cta .wp-block-columns { flex-wrap: wrap !important; }
+  .nasca-cta .wp-block-column { flex-basis: 100% !important; }
+  .nasca-cta .wp-block-buttons { justify-content: flex-start; margin-top: .5rem; }
+  /* Pie: 2 + 2 columnas */
+  .site-footer > .wp-block-columns { flex-wrap: wrap !important; row-gap: var(--wp--preset--spacing--40); }
+  .site-footer > .wp-block-columns > .wp-block-column { flex-basis: calc(50% - var(--wp--preset--spacing--50) / 2) !important; }
+  .site-footer > .wp-block-columns > .wp-block-column:first-child { flex-basis: 100% !important; }
+}
+
+@media (max-width: 781px) {
+  /* Cabecera compacta: logo a la izquierda, botón y hamburguesa a la derecha, en una sola fila */
+  .site-header > .wp-block-group:last-child { flex-wrap: nowrap !important; gap: .75rem; }
+  .site-header .nasca-logo { flex: 1 1 auto; min-width: 0; }
+  .site-header .nasca-logo .wp-block-site-logo img { max-height: 40px; }
+  .site-header .wp-block-site-title { font-size: 1.5rem; }
+  .site-header .wp-block-site-tagline { font-size: .65rem; }
+  .site-header .wp-block-buttons { order: 2; margin-left: 0; flex: 0 0 auto; }
+  .site-header .wp-block-buttons .wp-block-button__link { padding: .7rem 1.1rem; font-size: .85rem; }
+  .site-header .wp-block-navigation { order: 3; flex: 0 0 auto; }
+  .nasca-topbar { gap: .35rem 1rem; }
+  /* Pie en una columna */
+  .site-footer > .wp-block-columns > .wp-block-column { flex-basis: 100% !important; }
+  .site-footer .nasca-legal-links { gap: .75rem 1.5rem; }
+  /* Tarjetas: menos relleno */
+  .is-style-card { padding: 2rem 1.5rem !important; }
+  .nasca-map { padding: 1.75rem 1.5rem 1.5rem !important; }
+  /* Hero y secciones: menos altura */
+  .is-style-hero.wp-block-cover { min-height: 70vh !important; }
+  .nasca-quote { font-size: clamp(1.75rem, 7vw, 2.6rem); }
+  .wp-block-cover { min-height: 0 !important; }
+}
+
+@media (max-width: 480px) {
+  .site-header .wp-block-buttons { display: none; }           /* el CTA sigue en el menú desplegable y en el home */
+  .site-header .nasca-logo .wp-block-site-logo img { max-height: 36px; }
+  .is-style-stat, h2.is-style-stat, h3.is-style-stat { font-size: 2.6rem; }
+  .has-display-font-size, h1 { font-size: clamp(2.6rem, 12vw, 3.4rem) !important; }
+  .wp-block-buttons .wp-block-button { width: 100%; }
+  .wp-block-buttons .wp-block-button__link { width: 100%; justify-content: center; display: flex; }
+  .site-header .nasca-topbar p { font-size: .75rem; }
+}
+/* El enlace "Canal Comunitario" del menú solo se ve en el menú desplegable móvil */
+.site-header .wp-block-navigation__container > .nasca-nav-cta { display: none; }
+.site-header .is-menu-open .wp-block-navigation__container > .nasca-nav-cta { display: block; }
+.site-header .is-menu-open .nasca-nav-cta a { color: var(--wp--preset--color--accent); font-weight: 700; }

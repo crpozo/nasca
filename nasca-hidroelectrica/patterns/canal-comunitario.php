@@ -48,7 +48,7 @@
 					<!-- wp:html --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg><!-- /wp:html -->
 				</div>
 				<!-- /wp:group -->
-				<!-- wp:heading {"level":3,"fontSize":"xx-large","style":{"spacing":{"margin":{"top":"2.5rem"}}}} --><h3 class="wp-block-heading has-xx-large-font-size" style="margin-top:2.5rem">Sistema de Atención Ciudadana</h3><!-- /wp:heading -->
+				<!-- wp:heading {"level":3,"fontSize":"xx-large","style":{"spacing":{"margin":{"top":"2.5rem"}}}} --><h3 class="wp-block-heading has-xx-large-font-size" style="margin-top:2.5rem">Sistema de Atención Comunitaria</h3><!-- /wp:heading -->
 				<!-- wp:paragraph {"textColor":"text-muted","style":{"spacing":{"margin":{"top":"1.5rem"}}}} --><p class="has-text-muted-color has-text-color" style="margin-top:1.5rem">Incorporamos un canal para el registro de requerimientos, solicitudes y observaciones comunitarias.</p><!-- /wp:paragraph -->
 				<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"2rem"}}}} -->
 				<div class="wp-block-buttons" style="margin-top:2rem">
