@@ -445,3 +445,5 @@ h2.is-style-stat, h3.is-style-stat {
 /* Los bloques con ancho máximo de caracteres se alinean a la izquierda dentro de layouts "constrained" */
 .is-layout-constrained > .nasca-max-50, .is-layout-constrained > .nasca-max-36, .is-layout-constrained > .nasca-max-30,
 .is-layout-constrained > .nasca-max-24, .is-layout-constrained > .nasca-max-14 { margin-left: 0 !important; margin-right: auto !important; }
+.nasca-form, .nasca-form label, .nasca-form-row { min-width: 0; }
+.nasca-form input, .nasca-form select, .nasca-form textarea { box-sizing: border-box; min-width: 0; max-width: 100%; }
