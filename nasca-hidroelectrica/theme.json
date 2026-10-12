@@ -215,9 +215,6 @@
         "vw",
         "%"
       ],
-      "spacingScale": {
-        "steps": 0
-      },
       "spacingSizes": [
         {
           "slug": "10",
@@ -254,7 +251,8 @@
           "size": "clamp(7rem, 13vw, 13rem)",
           "name": "7"
         }
-      ]
+      ],
+      "defaultSpacingSizes": false
     },
     "custom": {
       "radius": {
