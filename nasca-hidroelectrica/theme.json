@@ -177,7 +177,7 @@
         {
           "slug": "large",
           "name": "Grande",
-          "size": "clamp(1.05rem, 1.1vw, 1.4rem)",
+          "size": "clamp(1.05rem, 1.05vw, 1.35rem)",
           "fluid": false
         },
         {

@@ -469,3 +469,5 @@ main.wp-block-group > * + *, .wp-block-post-content > * + *,
 .wp-block-cover .has-large-font-size { max-width: 40ch; }
 .is-style-stat-label { font-size: clamp(0.8rem, 0.75vw, 0.95rem); }
 .is-style-eyebrow { font-size: clamp(0.72rem, 0.65vw, 0.85rem); }
+
+@media (min-width: 1100px) { .is-style-hero.wp-block-cover { min-height: calc(100vh - 150px) !important; } }
