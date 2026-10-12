@@ -13,7 +13,6 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-valle.jpg' );
 
 <!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"base","layout":{"type":"constrained","contentSize":"2400px"}} -->
 <section id="oportunidades" class="wp-block-group has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter)">
-	<!-- wp:paragraph {"className":"is-style-eyebrow"} --><p class="is-style-eyebrow">02</p><!-- /wp:paragraph -->
 	<!-- wp:heading {"level":2,"className":"nasca-max-24","fontSize":"xx-large","style":{"spacing":{"margin":{"top":"1rem"}}}} --><h2 class="wp-block-heading nasca-max-24 has-xx-large-font-size" style="margin-top:1rem">Oportunidades Locales y Desarrollo Territorial</h2><!-- /wp:heading -->
 	<!-- wp:paragraph {"className":"nasca-max-50","textColor":"text-muted","style":{"spacing":{"margin":{"top":"1rem"}}}} --><p class="nasca-max-50 has-text-muted-color has-text-color" style="margin-top:1rem">Procesos transparentes de registro para la vinculación progresiva de mano de obra y servicios locales.</p><!-- /wp:paragraph -->
 

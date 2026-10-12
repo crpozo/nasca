@@ -13,7 +13,6 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-mist.jpg' );
 
 <!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"base-2","layout":{"type":"constrained","contentSize":"2400px"}} -->
 <section id="faq" class="wp-block-group has-base-2-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter)">
-	<!-- wp:paragraph {"className":"is-style-eyebrow"} --><p class="is-style-eyebrow">04</p><!-- /wp:paragraph -->
 	<!-- wp:heading {"level":2,"className":"nasca-max-24","fontSize":"xx-large","style":{"spacing":{"margin":{"top":"1rem"}}}} --><h2 class="wp-block-heading nasca-max-24 has-xx-large-font-size" style="margin-top:1rem">Preguntas Frecuentes y Claridad Técnica</h2><!-- /wp:heading -->
 	<!-- wp:paragraph {"textColor":"text-muted","style":{"spacing":{"margin":{"top":"1rem"}}}} --><p class="has-text-muted-color has-text-color" style="margin-top:1rem">Información transparente sobre la naturaleza, límites y compromisos del Proyecto Nasca.</p><!-- /wp:paragraph -->
 
