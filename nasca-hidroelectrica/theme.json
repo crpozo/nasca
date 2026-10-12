@@ -241,17 +241,17 @@
         },
         {
           "slug": "50",
-          "size": "clamp(3rem, 6vw, 5rem)",
+          "size": "clamp(4rem, 7vw, 7rem)",
           "name": "5"
         },
         {
           "slug": "60",
-          "size": "clamp(4rem, 9vw, 7.5rem)",
+          "size": "clamp(6rem, 10vw, 10rem)",
           "name": "6"
         },
         {
           "slug": "70",
-          "size": "clamp(5rem, 12vw, 10rem)",
+          "size": "clamp(7rem, 13vw, 13rem)",
           "name": "7"
         }
       ]
