@@ -162,3 +162,16 @@ add_filter( 'body_class', 'nasca_body_class' );
  * Las plantillas desde /templates y las partes desde /parts.
  * No hace falta registrar nada más.
  */
+
+/**
+ * El logo de respaldo de la cabecera/pie apunta a la carpeta real del tema,
+ * aunque WordPress esté instalado en un subdirectorio.
+ */
+function nasca_fix_fallback_logo( $block_content, $block ) {
+	if ( 'core/html' === $block['blockName'] && false !== strpos( $block_content, 'nasca-logo-fallback' ) ) {
+		$block_content = str_replace( '/wp-content/themes/nasca-hidroelectrica/', trailingslashit( get_template_directory_uri() ), $block_content );
+		$block_content = str_replace( 'href="/"', 'href="' . esc_url( home_url( '/' ) ) . '"', $block_content );
+	}
+	return $block_content;
+}
+add_filter( 'render_block', 'nasca_fix_fallback_logo', 10, 2 );

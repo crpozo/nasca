@@ -259,8 +259,11 @@ h2.is-style-stat, h3.is-style-stat {
 }
 
 /* Si hay logo subido en Apariencia > Editor > Logo, se oculta el texto de respaldo */
-.nasca-logo .wp-block-site-logo ~ .wp-block-site-title,
-.nasca-logo .wp-block-site-logo ~ .wp-block-site-tagline { display: none; }
+.nasca-logo .wp-block-site-logo ~ .nasca-logo-fallback { display: none; }
+.nasca-logo-fallback { display: block; line-height: 0; }
+.nasca-logo-fallback img { height: 56px; width: auto; }
+.site-footer .nasca-logo-fallback img { height: 70px; }
+@media (max-width: 781px) { .nasca-logo-fallback img { height: 40px; } }
 @media (max-width: 781px) {
   .nasca-divider-left { border-left: 0; padding-left: 0; border-top: 1px solid var(--wp--preset--color--line); padding-top: 1.5rem; }
 }
