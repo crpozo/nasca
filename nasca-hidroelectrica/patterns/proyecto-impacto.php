@@ -6,7 +6,7 @@
  * Description: Bloque oscuro con tres cifras: etiqueta, número grande y descripción.
  */
 ?>
-<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"contrast","textColor":"base","layout":{"type":"constrained","contentSize":"1800px"}} -->
+<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"contrast","textColor":"base","layout":{"type":"constrained","contentSize":"2400px"}} -->
 <section class="wp-block-group has-base-color has-contrast-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter)">
 	<!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"accent"} --><p class="is-style-eyebrow has-accent-color has-text-color">01 / Impacto en energía renovable</p><!-- /wp:paragraph -->
 	<!-- wp:columns {"className":"nasca-impacto","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"},"blockGap":{"left":"var:preset|spacing|50"}}}} -->

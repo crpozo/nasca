@@ -17,7 +17,7 @@ $rows = array(
 	array( 'Fase Actual', 'Presencia constante en el Valle de Intag con mesas de trabajo, diagnóstico de necesidades y diálogo abierto en las 14 comunidades.', 'En curso', 'Estándares Internacionales', 'Gestión en territorio alineada a las Normas de Desempeño de la IFC y Principios de Ecuador.' ),
 );
 ?>
-<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"primary","textColor":"base","layout":{"type":"constrained","contentSize":"1800px"}} -->
+<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"primary","textColor":"base","layout":{"type":"constrained","contentSize":"2400px"}} -->
 <section class="wp-block-group has-base-color has-primary-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter)">
 	<!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"accent"} --><p class="is-style-eyebrow has-accent-color has-text-color">03 / Transparencia y cumplimiento</p><!-- /wp:paragraph -->
 	<!-- wp:heading {"level":2,"textColor":"base","fontSize":"xx-large","style":{"spacing":{"margin":{"top":"1rem"}}}} --><h2 class="wp-block-heading has-base-color has-text-color has-xx-large-font-size" style="margin-top:1rem">Trayectoria Técnica y<br>Cumplimiento Normativo</h2><!-- /wp:heading -->

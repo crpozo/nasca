@@ -7,7 +7,7 @@
  */
 $img = esc_url( get_template_directory_uri() . '/assets/images/bg-stats.jpg' );
 ?>
-<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":220,"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"1800px"}} -->
+<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":220,"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"2400px"}} -->
 <div class="wp-block-cover" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--custom--gutter);min-height:220px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-60 has-background-dim"></span><div class="wp-block-cover__inner-container">
 	<!-- wp:group {"className":"nasca-cta","layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center","flexWrap":"wrap"}} -->
 	<div class="wp-block-group nasca-cta">

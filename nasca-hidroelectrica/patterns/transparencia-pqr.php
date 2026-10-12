@@ -11,7 +11,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-hero.jpg' );
 <div class="wp-block-cover nasca-band" style="min-height:260px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-3-background-color has-background-dim-20 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph --><p></p><!-- /wp:paragraph --></div></div>
 <!-- /wp:cover -->
 
-<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"contrast","textColor":"base","layout":{"type":"constrained","contentSize":"1800px"}} -->
+<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"contrast","textColor":"base","layout":{"type":"constrained","contentSize":"2400px"}} -->
 <section id="pqr" class="wp-block-group has-base-color has-contrast-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter)">
 	<!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"accent"} --><p class="is-style-eyebrow has-accent-color has-text-color">03</p><!-- /wp:paragraph -->
 	<!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"margin":{"top":"1rem"},"blockGap":{"left":"var:preset|spacing|50"}}}} -->

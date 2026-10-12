@@ -10,7 +10,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-stats.jpg' );
 <!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"backgroundColor":"contrast","textColor":"base","layout":{"type":"default"}} -->
 <section class="wp-block-group has-base-color has-contrast-background-color has-text-color has-background" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
 
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"1800px"}} -->
+	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"2400px"}} -->
 	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--custom--gutter)">
 		<!-- wp:paragraph {"className":"is-style-eyebrow","textColor":"accent"} -->
 		<p class="is-style-eyebrow has-accent-color has-text-color">01 / Ingeniería al servicio del país</p>
@@ -36,7 +36,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-stats.jpg' );
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":400,"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"1800px"}} -->
+	<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":400,"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"2400px"}} -->
 	<div class="wp-block-cover" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter);min-height:400px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><div class="wp-block-cover__inner-container">
 		<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
 		<div class="wp-block-columns">
@@ -63,7 +63,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-stats.jpg' );
 	</div></div>
 	<!-- /wp:cover -->
 
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"primary","textColor":"base","layout":{"type":"constrained","contentSize":"1800px"}} -->
+	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"primary","textColor":"base","layout":{"type":"constrained","contentSize":"2400px"}} -->
 	<div class="wp-block-group has-base-color has-primary-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--custom--gutter)">
 		<!-- wp:columns {"className":"is-style-timeline"} -->
 		<div class="wp-block-columns is-style-timeline">

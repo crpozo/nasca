@@ -242,7 +242,7 @@ h2.is-style-stat, h3.is-style-stat {
 .nasca-max-24 { max-width: 24ch; }
 .nasca-max-14 { max-width: 14ch; }
 .nasca-fill { height: 100%; }
-.nasca-quote { font-family: var(--wp--preset--font-family--heading); font-size: clamp(1.9rem, 3vw, 2.9rem); line-height: 1.15; letter-spacing: -0.015em; max-width: 30ch; color: var(--wp--preset--color--base); }
+.nasca-quote { font-family: var(--wp--preset--font-family--heading); font-size: clamp(1.7rem, 2.1vw, 2.6rem); line-height: 1.15; letter-spacing: -0.015em; max-width: 30ch; color: var(--wp--preset--color--base); }
 .nasca-cite { font-size: var(--wp--preset--font-size--x-small); letter-spacing: .06em; text-transform: uppercase; color: var(--wp--preset--color--accent); }
 .nasca-border-top { border-top: 1px solid var(--wp--preset--color--line); }
 .nasca-divider-left { border-left: 1px solid var(--wp--preset--color--line); padding-left: 2rem; }
@@ -453,3 +453,18 @@ h2.is-style-stat, h3.is-style-stat {
 main.wp-block-group > * + *, .wp-block-post-content > * + *,
 .wp-block-post-content > .wp-block-group > * + * { margin-block-start: 0 !important; }
 .wp-block-post-content > p:empty { display: none; }
+
+/* Proporciones: párrafos de apoyo compactos, botones finos */
+.has-large-font-size { line-height: 1.55; }
+.wp-block-cover .has-large-font-size { max-width: 46ch; }
+.wp-block-button__link { line-height: 1.2; }
+.is-style-hero .wp-block-buttons { margin-top: 2rem !important; }
+.is-style-hero .nasca-hero-title { margin-top: 1.25rem !important; }
+.is-style-hero .is-style-eyebrow:last-child { margin-top: clamp(3rem, 8vh, 6rem) !important; }
+@media (max-width: 781px) { .is-style-hero.wp-block-cover { min-height: 78vh !important; } }
+
+/* Los bloques Fondo ya llevan el relleno del tema: no sumar el relleno global del contenedor interno */
+.wp-block-cover > .wp-block-cover__inner-container.has-global-padding { padding-left: 0; padding-right: 0; }
+.wp-block-cover .has-large-font-size { max-width: 58ch; }
+.is-style-stat-label { font-size: clamp(0.8rem, 0.75vw, 0.95rem); }
+.is-style-eyebrow { font-size: clamp(0.72rem, 0.65vw, 0.85rem); }

@@ -7,7 +7,7 @@
  */
 $img = esc_url( get_template_directory_uri() . '/assets/images/bg-mist.jpg' );
 ?>
-<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":45,"overlayColor":"contrast-2","isUserOverlayColor":true,"minHeight":460,"contentPosition":"center left","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"1800px","justifyContent":"left"}} -->
+<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":45,"overlayColor":"contrast-2","isUserOverlayColor":true,"minHeight":460,"contentPosition":"center left","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"2400px","justifyContent":"left"}} -->
 <div class="wp-block-cover has-custom-content-position is-position-center-left" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter);min-height:460px"><img class="wp-block-cover__image-background" alt="Neblina sobre el bosque de Intag" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-2-background-color has-background-dim-45 has-background-dim"></span><div class="wp-block-cover__inner-container">
 	<!-- wp:heading {"level":2,"textColor":"accent","style":{"typography":{"fontSize":"3rem"}}} -->
 	<h2 class="wp-block-heading has-accent-color has-text-color" style="font-size:3rem">Conoce Nasca</h2>

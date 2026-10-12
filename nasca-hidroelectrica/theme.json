@@ -6,7 +6,7 @@
     "useRootPaddingAwareAlignments": true,
     "layout": {
       "contentSize": "900px",
-      "wideSize": "1800px"
+      "wideSize": "2400px"
     },
     "color": {
       "defaultPalette": false,
@@ -171,53 +171,38 @@
         {
           "slug": "medium",
           "name": "Normal",
-          "size": "1.0625rem",
+          "size": "clamp(1rem, 0.85vw, 1.125rem)",
           "fluid": false
         },
         {
           "slug": "large",
           "name": "Grande",
-          "size": "1.35rem",
-          "fluid": {
-            "min": "1.2rem",
-            "max": "1.45rem"
-          }
+          "size": "clamp(1.1rem, 1.2vw, 1.5rem)",
+          "fluid": false
         },
         {
           "slug": "x-large",
           "name": "Título",
-          "size": "2.25rem",
-          "fluid": {
-            "min": "1.75rem",
-            "max": "2.5rem"
-          }
+          "size": "clamp(1.5rem, 1.75vw, 2.25rem)",
+          "fluid": false
         },
         {
           "slug": "xx-large",
           "name": "Título grande",
-          "size": "4rem",
-          "fluid": {
-            "min": "2.4rem",
-            "max": "4.75rem"
-          }
+          "size": "clamp(2.4rem, 3.5vw, 4.5rem)",
+          "fluid": false
         },
         {
           "slug": "display",
           "name": "Display (hero)",
-          "size": "5.5rem",
-          "fluid": {
-            "min": "3rem",
-            "max": "6rem"
-          }
+          "size": "clamp(3rem, 7vw, 8.5rem)",
+          "fluid": false
         },
         {
           "slug": "stat",
           "name": "Cifra",
-          "size": "3.5rem",
-          "fluid": {
-            "min": "2.5rem",
-            "max": "3.75rem"
-          }
+          "size": "clamp(2.2rem, 2.7vw, 3.4rem)",
+          "fluid": false
         }
       ]
     },
@@ -289,7 +274,7 @@
       "fontFamily": "var(--wp--preset--font-family--body)",
       "fontSize": "var(--wp--preset--font-size--medium)",
       "fontWeight": "400",
-      "lineHeight": "1.65"
+      "lineHeight": "1.6"
     },
     "spacing": {
       "padding": {
@@ -303,7 +288,7 @@
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--heading)",
           "fontWeight": "400",
-          "lineHeight": "1.05",
+          "lineHeight": "1",
           "letterSpacing": "-0.02em"
         },
         "color": {
@@ -312,7 +297,8 @@
       },
       "h1": {
         "typography": {
-          "fontSize": "var(--wp--preset--font-size--display)"
+          "fontSize": "var(--wp--preset--font-size--display)",
+          "lineHeight": "0.95"
         }
       },
       "h2": {
@@ -350,7 +336,7 @@
         },
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--body)",
-          "fontSize": "var(--wp--preset--font-size--medium)",
+          "fontSize": "clamp(0.95rem, 0.95vw, 1.2rem)",
           "fontWeight": "600"
         },
         "border": {
@@ -361,10 +347,10 @@
         },
         "spacing": {
           "padding": {
-            "top": "1rem",
-            "bottom": "1rem",
-            "left": "2.25rem",
-            "right": "2.25rem"
+            "top": "1em",
+            "bottom": "1em",
+            "left": "2.1em",
+            "right": "2.1em"
           }
         },
         ":hover": {
@@ -397,10 +383,10 @@
             },
             "spacing": {
               "padding": {
-                "top": "1rem",
-                "bottom": "1rem",
-                "left": "2.25rem",
-                "right": "2.25rem"
+                "top": "1em",
+                "bottom": "1em",
+                "left": "2.1em",
+                "right": "2.1em"
               }
             }
           }
@@ -408,7 +394,7 @@
       },
       "core/navigation": {
         "typography": {
-          "fontSize": "var(--wp--preset--font-size--medium)",
+          "fontSize": "clamp(1rem, 0.9vw, 1.15rem)",
           "fontWeight": "400"
         }
       },
