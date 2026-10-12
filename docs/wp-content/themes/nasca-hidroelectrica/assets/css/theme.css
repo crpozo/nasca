@@ -242,7 +242,7 @@ h2.is-style-stat, h3.is-style-stat {
 .nasca-max-24 { max-width: 24ch; }
 .nasca-max-14 { max-width: 14ch; }
 .nasca-fill { height: 100%; }
-.nasca-quote { font-family: var(--wp--preset--font-family--heading); font-size: 40px; font-weight: 300; line-height: 1.15; letter-spacing: -0.015em; max-width: 30ch; color: var(--wp--preset--color--base); }
+.nasca-quote { font-family: var(--wp--preset--font-family--heading); font-size: 44px; font-weight: 300; line-height: 1.15; letter-spacing: -0.015em; max-width: 30ch; color: var(--wp--preset--color--base); }
 .nasca-cite { font-size: var(--wp--preset--font-size--x-small); letter-spacing: .06em; text-transform: uppercase; color: var(--wp--preset--color--accent); }
 .nasca-border-top { border-top: 1px solid var(--wp--preset--color--line); }
 .nasca-divider-left { border-left: 1px solid var(--wp--preset--color--line); padding-left: 2rem; }
@@ -463,13 +463,13 @@ h2.is-style-stat, h3.is-style-stat {
 /* Los bloques Fondo ya llevan el relleno del tema: no sumar el relleno global del contenedor interno */
 .wp-block-cover > .wp-block-cover__inner-container.has-global-padding { padding-left: 0; padding-right: 0; }
 .wp-block-cover .has-large-font-size { max-width: 580px; }
-.is-style-stat-label { font-size: 12px; }
-.is-style-eyebrow { font-size: 12px; }
+.is-style-stat-label { font-size: 13px; }
+.is-style-eyebrow { font-size: 13px; }
 
 @media (min-width: 1100px) { .is-style-hero.wp-block-cover { min-height: calc(100vh - 150px) !important; } }
 
 /* Escala fija del diseño (1440px). Solo se reduce en pantallas pequeñas. */
-.is-style-timeline p, .nasca-timeline-date { font-size: 14px; }
+.is-style-timeline p, .nasca-timeline-date { font-size: 15px; }
 .is-style-card .has-x-large-font-size, .nasca-steps h3 { font-weight: 400; }
 .nasca-valor-num { font-size: 64px; }
 .nasca-step-num { font-size: 22px; }
@@ -497,8 +497,8 @@ h1 + p, h2 + p, h2 + .wp-block-group { margin-top: 1.5rem; }
 
 /* Hero: todo visible en la primera pantalla */
 .is-style-hero.wp-block-cover { min-height: calc(100vh - 150px) !important; padding-top: clamp(2rem, 6vh, 5rem) !important; padding-bottom: clamp(2rem, 5vh, 4rem) !important; }
-.is-style-hero h1 { font-size: clamp(44px, 8.5vh, 84px) !important; margin-top: 1rem !important; }
-.is-style-hero h1 + p { font-size: clamp(15px, 1.9vh, 17px) !important; margin-top: clamp(1rem, 2.5vh, 2rem) !important; max-width: 520px; line-height: 1.6; }
+.is-style-hero h1 { font-size: clamp(46px, 9.2vh, 92px) !important; margin-top: 1rem !important; }
+.is-style-hero h1 + p { font-size: clamp(16px, 2vh, 19px) !important; margin-top: clamp(1rem, 2.5vh, 2rem) !important; max-width: 600px; line-height: 1.6; }
 .is-style-hero .wp-block-buttons { margin-top: clamp(1.25rem, 3vh, 2.25rem) !important; }
 .is-style-hero .is-style-eyebrow:last-child { margin-top: clamp(1.5rem, 5vh, 4rem) !important; }
 @media (max-width: 781px) { .is-style-hero.wp-block-cover { min-height: 0 !important; } .is-style-hero h1 { font-size: clamp(40px, 11vw, 56px) !important; } }
