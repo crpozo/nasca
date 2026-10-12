@@ -242,7 +242,7 @@ h2.is-style-stat, h3.is-style-stat {
 .nasca-max-24 { max-width: 24ch; }
 .nasca-max-14 { max-width: 14ch; }
 .nasca-fill { height: 100%; }
-.nasca-quote { font-family: var(--wp--preset--font-family--heading); font-size: clamp(1.7rem, 2.1vw, 2.6rem); line-height: 1.15; letter-spacing: -0.015em; max-width: 30ch; color: var(--wp--preset--color--base); }
+.nasca-quote { font-family: var(--wp--preset--font-family--heading); font-size: 40px; font-weight: 300; line-height: 1.15; letter-spacing: -0.015em; max-width: 30ch; color: var(--wp--preset--color--base); }
 .nasca-cite { font-size: var(--wp--preset--font-size--x-small); letter-spacing: .06em; text-transform: uppercase; color: var(--wp--preset--color--accent); }
 .nasca-border-top { border-top: 1px solid var(--wp--preset--color--line); }
 .nasca-divider-left { border-left: 1px solid var(--wp--preset--color--line); padding-left: 2rem; }
@@ -276,9 +276,7 @@ h2.is-style-stat, h3.is-style-stat {
   .site-header .wp-block-navigation .wp-block-navigation__container { justify-content: center; }
   .site-header .wp-block-buttons { margin-left: auto; }
   /* Cifras un poco más pequeñas */
-  .is-style-stat, h2.is-style-stat, h3.is-style-stat { font-size: clamp(2.4rem, 5.2vw, 4.5rem); }
   /* Títulos de tarjeta: no partir palabras */
-  .is-style-card .has-xx-large-font-size { font-size: clamp(1.7rem, 3.6vw, 2.75rem) !important; }
   /* Mapa encima de la tarjeta de comunidad */
   .nasca-sost-grid.wp-block-columns { flex-wrap: wrap !important; }
   .nasca-sost-grid > .wp-block-column { flex-basis: 100% !important; }
@@ -320,7 +318,7 @@ h2.is-style-stat, h3.is-style-stat {
   .site-header .wp-block-buttons { display: none; }           /* el CTA sigue en el menú desplegable y en el home */
   .site-header .nasca-logo .wp-block-site-logo img { max-height: 36px; }
   .is-style-stat, h2.is-style-stat, h3.is-style-stat { font-size: 2.6rem; }
-  .has-display-font-size, h1 { font-size: clamp(2.6rem, 12vw, 3.4rem) !important; }
+  .has-display-font-size, h1 { font-size: clamp(40px, 12vw, 54px) !important; }
   .wp-block-buttons .wp-block-button { width: 100%; }
   .wp-block-buttons .wp-block-button__link { width: 100%; justify-content: center; display: flex; }
   .site-header .nasca-topbar p { font-size: .75rem; }
@@ -450,12 +448,11 @@ h2.is-style-stat, h3.is-style-stat {
 
 /* Sin separación entre cabecera, secciones y pie: las secciones van pegadas */
 .wp-site-blocks > * + * { margin-block-start: 0 !important; }
-main.wp-block-group > * + *, .wp-block-post-content > * + *,
-.wp-block-post-content > .wp-block-group > * + * { margin-block-start: 0 !important; }
 .wp-block-post-content > p:empty { display: none; }
 
 /* Proporciones: párrafos de apoyo compactos, botones finos */
-.has-large-font-size { line-height: 1.55; }
+.has-large-font-size { line-height: 1.65; }
+.wp-block-cover p.has-large-font-size { line-height: 1.65; font-size: 17px; }
 .wp-block-cover .has-large-font-size { max-width: 46ch; }
 .wp-block-button__link { line-height: 1.2; }
 .is-style-hero .wp-block-buttons { margin-top: 2.75rem !important; }
@@ -466,8 +463,25 @@ main.wp-block-group > * + *, .wp-block-post-content > * + *,
 
 /* Los bloques Fondo ya llevan el relleno del tema: no sumar el relleno global del contenedor interno */
 .wp-block-cover > .wp-block-cover__inner-container.has-global-padding { padding-left: 0; padding-right: 0; }
-.wp-block-cover .has-large-font-size { max-width: 40ch; }
-.is-style-stat-label { font-size: clamp(0.8rem, 0.75vw, 0.95rem); }
-.is-style-eyebrow { font-size: clamp(0.72rem, 0.65vw, 0.85rem); }
+.wp-block-cover .has-large-font-size { max-width: 580px; }
+.is-style-stat-label { font-size: 12px; }
+.is-style-eyebrow { font-size: 12px; }
 
 @media (min-width: 1100px) { .is-style-hero.wp-block-cover { min-height: calc(100vh - 150px) !important; } }
+
+/* Escala fija del diseño (1440px). Solo se reduce en pantallas pequeñas. */
+.is-style-timeline p, .nasca-timeline-date { font-size: 14px; }
+.is-style-card .has-x-large-font-size, .nasca-steps h3 { font-weight: 400; }
+.nasca-valor-num { font-size: 64px; }
+.nasca-step-num { font-size: 22px; }
+@media (max-width: 1100px) {
+  .has-display-font-size, h1.has-display-font-size, .nasca-hero-title { font-size: clamp(44px, 7.5vw, 96px) !important; }
+  .has-xx-large-font-size { font-size: clamp(34px, 5vw, 56px) !important; }
+  .nasca-quote { font-size: clamp(26px, 3.6vw, 40px); }
+}
+
+/* El reset de separación entre secciones no debe afectar al contenido interno */
+main.wp-block-group > * + *, .wp-block-post-content > * + * { margin-block-start: 0 !important; }
+.wp-block-post-content > .wp-block-group > * + * { margin-block-start: revert !important; }
+.is-style-eyebrow + h1, .is-style-eyebrow + h2, .is-style-eyebrow + .wp-block-columns, .is-style-eyebrow + .nasca-impacto { margin-top: 1.25rem !important; }
+.nasca-impacto { margin-top: 2rem !important; }

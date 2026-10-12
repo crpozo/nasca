@@ -15,12 +15,12 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-hero.jpg' );
 	<p class="is-style-eyebrow has-accent-color has-text-color">Central Hidroeléctrica · Valle de Intag, Ecuador</p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:heading {"level":1,"className":"nasca-hero-title","textColor":"base","style":{"spacing":{"margin":{"top":"1.5rem"}}}} -->
-	<h1 class="wp-block-heading nasca-hero-title has-base-color has-text-color" style="margin-top:1.5rem">Energía<br>en armonía.</h1>
+	<!-- wp:heading {"level":1,"className":"nasca-hero-title","textColor":"base","style":{"spacing":{"margin":{"top":"1.5rem"}},"typography":{"fontWeight":"300"}}} -->
+	<h1 class="wp-block-heading nasca-hero-title has-base-color has-text-color" style="margin-top:1.5rem;font-weight:300">Energía<br>en armonía.</h1>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"className":"nasca-max-50","textColor":"base","fontSize":"large","style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontWeight":"300"}}} -->
-	<p class="nasca-max-50 has-base-color has-text-color has-large-font-size" style="margin-top:2rem;font-weight:300">Transformamos de forma eficiente y consciente la fuerza del agua en energía renovable, impulsando la sostenibilidad real con nuestras comunidades y el fortalecimiento del Ecuador.</p>
+	<!-- wp:paragraph {"className":"nasca-max-50","textColor":"base","fontSize":"large","style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontWeight":"400"}}} -->
+	<p class="nasca-max-50 has-base-color has-text-color has-large-font-size" style="margin-top:2rem;font-weight:400">Transformamos de forma eficiente y consciente la fuerza del agua en energía renovable, impulsando la sostenibilidad real con nuestras comunidades y el fortalecimiento del Ecuador.</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"2.5rem"},"blockGap":"1rem"}}} -->
