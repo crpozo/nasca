@@ -5,7 +5,7 @@
  * Categories: nasca-sections
  * Description: Franja fotográfica, título y preguntas frecuentes con el bloque nativo Detalles (acordeón).
  */
-$img = esc_url( get_template_directory_uri() . '/assets/images/bg-mist.jpg' );
+$img = esc_url( get_template_directory_uri() . '/assets/images/bg-valle.jpg' );
 ?>
 <!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":10,"minHeight":220,"isUserOverlayColor":true,"overlayColor":"contrast-3","className":"nasca-band","layout":{"type":"constrained"}} -->
 <div class="wp-block-cover nasca-band" style="min-height:220px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-3-background-color has-background-dim-10 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph --><p></p><!-- /wp:paragraph --></div></div>

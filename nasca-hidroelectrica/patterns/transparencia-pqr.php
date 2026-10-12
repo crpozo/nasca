@@ -5,7 +5,7 @@
  * Categories: nasca-sections
  * Description: Franja fotográfica y sección oscura con texto a la izquierda y formulario PQR a la derecha. El formulario es un bloque HTML; reemplázalo por el shortcode de tu plugin de formularios para recibir envíos.
  */
-$img = esc_url( get_template_directory_uri() . '/assets/images/bg-hero.jpg' );
+$img = esc_url( get_template_directory_uri() . '/assets/images/bg-valle.jpg' );
 ?>
 <!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":20,"minHeight":260,"isUserOverlayColor":true,"overlayColor":"contrast-3","className":"nasca-band","layout":{"type":"constrained"}} -->
 <div class="wp-block-cover nasca-band" style="min-height:260px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-3-background-color has-background-dim-20 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph --><p></p><!-- /wp:paragraph --></div></div>
