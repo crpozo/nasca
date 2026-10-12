@@ -177,7 +177,7 @@
         {
           "slug": "large",
           "name": "Grande",
-          "size": "clamp(1.1rem, 1.2vw, 1.5rem)",
+          "size": "clamp(1.05rem, 1.1vw, 1.4rem)",
           "fluid": false
         },
         {
@@ -336,7 +336,7 @@
         },
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--body)",
-          "fontSize": "clamp(0.95rem, 0.95vw, 1.2rem)",
+          "fontSize": "clamp(0.95rem, 1vw, 1.25rem)",
           "fontWeight": "600"
         },
         "border": {
@@ -347,8 +347,8 @@
         },
         "spacing": {
           "padding": {
-            "top": "1em",
-            "bottom": "1em",
+            "top": "1.15em",
+            "bottom": "1.15em",
             "left": "2.1em",
             "right": "2.1em"
           }
@@ -383,8 +383,8 @@
             },
             "spacing": {
               "padding": {
-                "top": "1em",
-                "bottom": "1em",
+                "top": "1.15em",
+                "bottom": "1.15em",
                 "left": "2.1em",
                 "right": "2.1em"
               }

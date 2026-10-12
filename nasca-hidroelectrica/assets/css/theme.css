@@ -458,13 +458,14 @@ main.wp-block-group > * + *, .wp-block-post-content > * + *,
 .has-large-font-size { line-height: 1.55; }
 .wp-block-cover .has-large-font-size { max-width: 46ch; }
 .wp-block-button__link { line-height: 1.2; }
-.is-style-hero .wp-block-buttons { margin-top: 2rem !important; }
-.is-style-hero .nasca-hero-title { margin-top: 1.25rem !important; }
+.is-style-hero .wp-block-buttons { margin-top: 2.75rem !important; }
+.is-style-hero .nasca-hero-title { margin-top: 1.5rem !important; }
+.is-style-hero .nasca-hero-title + p { margin-top: 2.75rem !important; }
 .is-style-hero .is-style-eyebrow:last-child { margin-top: clamp(3rem, 8vh, 6rem) !important; }
 @media (max-width: 781px) { .is-style-hero.wp-block-cover { min-height: 78vh !important; } }
 
 /* Los bloques Fondo ya llevan el relleno del tema: no sumar el relleno global del contenedor interno */
 .wp-block-cover > .wp-block-cover__inner-container.has-global-padding { padding-left: 0; padding-right: 0; }
-.wp-block-cover .has-large-font-size { max-width: 58ch; }
+.wp-block-cover .has-large-font-size { max-width: 40ch; }
 .is-style-stat-label { font-size: clamp(0.8rem, 0.75vw, 0.95rem); }
 .is-style-eyebrow { font-size: clamp(0.72rem, 0.65vw, 0.85rem); }
