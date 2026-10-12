@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 330" role="img" aria-label="Perfil de montaña, túnel subterráneo y trazado de transmisión">
+  <path d="M40 200 L160 120 L250 150 L420 40 L700 240 L740 250 L800 270 L900 300 L1000 215 L1140 230 L1140 310 L40 310 Z" fill="#DDE3D5" stroke="#5A6B5A" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M160 142 C300 160 400 180 530 200 C650 220 720 240 850 248" fill="none" stroke="#4C2A85" stroke-width="5" stroke-dasharray="14 10" stroke-linecap="round"/>
+  <path d="M850 248 C900 290 960 320 1140 285" fill="none" stroke="#2F4A3C" stroke-width="5" stroke-linecap="round"/>
+  <g font-family="Raleway, sans-serif" font-size="12" font-weight="700" fill="#4C2A85" text-anchor="middle">
+    <rect x="360" y="226" width="170" height="24" rx="12" fill="#C9D3C4"/>
+    <text x="445" y="242">TÚNEL SUBTERRÁNEO · 5.8 KM</text>
+  </g>
+  <g font-family="Raleway, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">
+    <circle cx="160" cy="142" r="20" fill="#4C2A85"/><text x="160" y="147">1</text>
+    <circle cx="460" cy="186" r="20" fill="#4C2A85"/><text x="460" y="191">2</text>
+    <circle cx="880" cy="262" r="20" fill="#4C2A85"/><text x="880" y="267">3</text>
+    <circle cx="1000" cy="300" r="20" fill="#4C2A85"/><text x="1000" y="305">4</text>
+    <circle cx="1130" cy="180" r="20" fill="#4C2A85"/><text x="1130" y="185">5</text>
+  </g>
+</svg>

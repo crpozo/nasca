@@ -205,7 +205,7 @@ h2.is-style-stat, h3.is-style-stat {
 .nasca-map .river { fill: none; stroke: rgba(133,180,150,.45); stroke-width: 2; }
 
 /* ---------- Cabecera ---------- */
-.nasca-topbar { font-size: var(--wp--preset--font-size--small); }
+.nasca-topbar { font-size: var(--wp--preset--font-size--small); border-bottom: 1px solid rgba(255,255,255,.06); }
 .nasca-topbar a { color: var(--wp--preset--color--text-muted-dark); }
 .nasca-topbar a:hover { color: var(--wp--preset--color--white); text-decoration: none; }
 .nasca-topbar .nasca-arrow::after { width: .8em; height: .8em; margin-left: .3em; }
@@ -242,7 +242,7 @@ h2.is-style-stat, h3.is-style-stat {
 .nasca-max-24 { max-width: 24ch; }
 .nasca-max-14 { max-width: 14ch; }
 .nasca-fill { height: 100%; }
-.nasca-quote { font-family: var(--wp--preset--font-family--heading); font-size: var(--wp--preset--font-size--xx-large); line-height: 1.1; letter-spacing: -0.02em; max-width: 24ch; color: var(--wp--preset--color--base); }
+.nasca-quote { font-family: var(--wp--preset--font-family--heading); font-size: clamp(1.9rem, 3vw, 2.9rem); line-height: 1.15; letter-spacing: -0.015em; max-width: 30ch; color: var(--wp--preset--color--base); }
 .nasca-cite { font-size: var(--wp--preset--font-size--x-small); letter-spacing: .06em; text-transform: uppercase; color: var(--wp--preset--color--accent); }
 .nasca-border-top { border-top: 1px solid var(--wp--preset--color--line); }
 .nasca-divider-left { border-left: 1px solid var(--wp--preset--color--line); padding-left: 2rem; }
@@ -329,3 +329,119 @@ h2.is-style-stat, h3.is-style-stat {
 .site-header .wp-block-navigation__container > .nasca-nav-cta { display: none; }
 .site-header .is-menu-open .wp-block-navigation__container > .nasca-nav-cta { display: block; }
 .site-header .is-menu-open .nasca-nav-cta a { color: var(--wp--preset--color--accent); font-weight: 700; }
+
+/* =========================================================
+   Páginas internas: Proyecto y Somos · Transparencia
+   ========================================================= */
+.nasca-kicker { font-size: var(--wp--preset--font-size--x-small); letter-spacing: .06em; text-transform: uppercase; color: var(--wp--preset--color--text-muted-dark); margin: 0; }
+.has-contrast-background-color .nasca-kicker { color: var(--wp--preset--color--text-muted-dark); }
+.nasca-impacto .is-style-stat { margin-top: .75rem; }
+
+/* Pasos numerados */
+.nasca-steps > .wp-block-column { padding: 0 1.5rem; border-left: 1px solid var(--wp--preset--color--line); }
+.nasca-steps > .wp-block-column:first-child { padding-left: 0; border-left: 0; }
+.nasca-step-num { font-family: var(--wp--preset--font-family--heading); font-size: 1.6rem; font-weight: 500; color: var(--wp--preset--color--primary); margin: 0 0 .5rem; }
+.nasca-steps h3 { font-family: var(--wp--preset--font-family--body); font-weight: 600; font-size: 1.1rem; line-height: 1.3; }
+.nasca-diagram figure { margin: 0; }
+
+/* Tarjetas translúcidas */
+.nasca-glass { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); border-radius: 14px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.nasca-glass-icon { background: rgba(255,255,255,.85); color: var(--wp--preset--color--primary); }
+.nasca-glass .is-style-eyebrow:empty { margin-bottom: 1rem; }
+.nasca-quote-sm { font-family: var(--wp--preset--font-family--heading); font-size: clamp(1.2rem, 1.9vw, 1.6rem); line-height: 1.35; letter-spacing: -0.01em; }
+.nasca-ifc { font-family: var(--wp--preset--font-family--heading); font-size: 1.25rem; background: rgba(255,255,255,.18); color: #fff; padding: .9rem 1.1rem; border-radius: 8px; margin: 0; flex: none; }
+.nasca-divider-left-light { border-left: 1px solid rgba(255,255,255,.25); padding-left: 2rem; }
+.nasca-valor-num { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 300; line-height: 1; margin: 0 0 1rem; padding-bottom: 1rem; border-bottom: 2px solid var(--wp--preset--color--accent); display: inline-block; min-width: 2.2em; }
+.nasca-valores h4 { font-weight: 400; }
+.nasca-valores > .wp-block-column { border-right: 1px solid rgba(255,255,255,.15); padding-right: 1.5rem; }
+.nasca-valores > .wp-block-column:last-child { border-right: 0; }
+
+/* Línea de tiempo vertical */
+.nasca-vtimeline { position: relative; }
+.nasca-vt-row { margin-bottom: 2.5rem !important; }
+.nasca-vt-mid { position: relative; }
+.nasca-vt-mid::before { content: ""; position: absolute; left: 50%; top: 1.9rem; bottom: -2.5rem; width: 1px; background: rgba(255,255,255,.45); }
+.nasca-vt-row:last-child .nasca-vt-mid::before { display: none; }
+.nasca-vt-date { display: inline-block; position: relative; z-index: 1; margin: 0 auto; padding: .35rem 1rem; border: 1px solid var(--wp--preset--color--accent); border-radius: 999px; background: var(--wp--preset--color--primary); color: var(--wp--preset--color--accent); font-size: var(--wp--preset--font-size--small); font-weight: 600; white-space: nowrap; }
+.nasca-vt-mid .wp-block-paragraph, .nasca-vt-mid p { text-align: center; }
+.nasca-vtimeline h3 { font-family: var(--wp--preset--font-family--body); font-weight: 700; font-size: 1.25rem; margin-bottom: .5rem; }
+
+/* Paneles Transparencia */
+.nasca-panel-title { gap: .9rem; padding-bottom: 1rem; border-bottom: 1px solid var(--wp--preset--color--line); margin-bottom: 1.25rem; }
+.nasca-panel-dark .nasca-panel-title { border-color: rgba(255,255,255,.2); }
+.nasca-mini-icon { width: 34px; height: 34px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; background: var(--wp--preset--color--accent-2); color: var(--wp--preset--color--contrast-3); flex: none; }
+.nasca-mini-icon svg { width: 18px; height: 18px; }
+.nasca-mini-icon-light { background: rgba(255,255,255,.18); color: #fff; }
+.nasca-mini-icon-primary { background: var(--wp--preset--color--primary-light); color: var(--wp--preset--color--primary); }
+.nasca-permit { padding: 1rem 0; border-bottom: 1px solid var(--wp--preset--color--line); }
+.nasca-permit p { margin: 0; }
+.nasca-permit p + p { margin-top: .35rem; }
+.nasca-badge { display: inline-block; font-size: .65rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: .2rem .6rem; border-radius: 999px; margin-right: .5rem; vertical-align: middle; }
+.nasca-badge-ok { background: var(--wp--preset--color--accent-2); color: var(--wp--preset--color--contrast-3); }
+.nasca-badge-live { background: var(--wp--preset--color--primary); color: #fff; }
+.nasca-tag-accent { background: var(--wp--preset--color--accent) !important; color: var(--wp--preset--color--contrast) !important; border-color: var(--wp--preset--color--accent) !important; }
+.nasca-norms { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.nasca-norms li { position: relative; padding: .9rem 0 .9rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,.15); color: #dfe8df; }
+.nasca-norms li::before { content: ""; position: absolute; left: 0; top: 1.35rem; width: 6px; height: 6px; border-radius: 50%; background: var(--wp--preset--color--accent); }
+.nasca-placeholder-box { margin-top: 1.5rem; padding: 1rem 1.25rem; border: 1px dashed rgba(255,255,255,.35); border-radius: 8px; color: #dfe8df; }
+.nasca-notice { gap: 1rem; }
+.nasca-info-dot { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--wp--preset--color--accent); color: var(--wp--preset--color--accent); font-size: .7rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex: none; margin-top: .2rem; }
+.nasca-band .wp-block-cover__inner-container { display: none; }
+
+/* Formularios */
+.nasca-form { display: flex; flex-direction: column; gap: 1.1rem; font-size: var(--wp--preset--font-size--small); }
+.nasca-form label { display: flex; flex-direction: column; gap: .4rem; font-weight: 600; color: var(--wp--preset--color--contrast); }
+.nasca-form input[type=text], .nasca-form input[type=tel], .nasca-form input[type=email], .nasca-form select, .nasca-form textarea {
+  font: inherit; font-weight: 400; width: 100%; padding: .8rem 1rem; border: 1px solid var(--wp--preset--color--line); border-radius: 6px; background: #fff; color: var(--wp--preset--color--contrast);
+}
+.nasca-form input:focus, .nasca-form select:focus, .nasca-form textarea:focus { outline: 2px solid var(--wp--preset--color--primary-light); border-color: var(--wp--preset--color--primary); }
+.nasca-form ::placeholder { color: #a9aba6; }
+.nasca-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.nasca-file { position: relative; display: flex; align-items: center; justify-content: center; padding: 1.1rem; border: 1px dashed var(--wp--preset--color--line); border-radius: 6px; color: var(--wp--preset--color--primary); font-weight: 500; background: #fff; }
+.nasca-file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; }
+.nasca-form .nasca-check { flex-direction: row; align-items: center; gap: .6rem; font-weight: 400; color: var(--wp--preset--color--text-muted); }
+.nasca-form .nasca-check input { width: 16px; height: 16px; accent-color: var(--wp--preset--color--primary); }
+.nasca-radios { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.nasca-radios legend { font-weight: 600; margin-bottom: .5rem; }
+.nasca-radios label { flex-direction: row; align-items: center; gap: .4rem; font-weight: 400; }
+.nasca-radios input { accent-color: var(--wp--preset--color--primary); }
+.nasca-form button { align-self: flex-start; cursor: pointer; border: 1px solid transparent; }
+.nasca-btn-primary { background: var(--wp--preset--color--primary) !important; color: #fff !important; }
+.nasca-btn-primary:hover { background: #3B1F6E !important; }
+.nasca-btn-outline { background: transparent !important; color: var(--wp--preset--color--primary) !important; border-color: var(--wp--preset--color--primary) !important; }
+.nasca-btn-outline:hover { background: var(--wp--preset--color--primary-light) !important; }
+.nasca-btn-wine { background: var(--wp--preset--color--accent-3) !important; color: #fff !important; }
+.nasca-btn-wine:hover { background: #4e2430 !important; }
+
+/* Preguntas frecuentes */
+.nasca-faq .wp-block-details { border-top: 1px solid var(--wp--preset--color--line); padding: 1.25rem 0; margin: 0; }
+.nasca-faq .wp-block-details:last-child { border-bottom: 1px solid var(--wp--preset--color--line); }
+.nasca-faq summary { font-family: var(--wp--preset--font-family--body); font-weight: 500; font-size: 1.1rem; list-style: none; cursor: pointer; display: flex; align-items: center; gap: 1rem; padding-right: 3rem; position: relative; }
+.nasca-faq summary::-webkit-details-marker { display: none; }
+.nasca-faq summary::after { content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--wp--preset--color--line); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--wp--preset--color--text-muted); }
+.nasca-faq details[open] summary::after { content: "–"; background: var(--wp--preset--color--primary-light); color: var(--wp--preset--color--primary); border-color: transparent; }
+.nasca-faq-num { font-size: var(--wp--preset--font-size--x-small); color: var(--wp--preset--color--primary); font-weight: 700; flex: none; width: 1.5rem; }
+.nasca-faq details[open] summary { color: var(--wp--preset--color--contrast); }
+.nasca-faq .wp-block-details > :not(summary) { margin: 1rem 0 0 2.5rem; }
+
+@media (max-width: 1100px) {
+  .nasca-steps.wp-block-columns { flex-wrap: wrap !important; }
+  .nasca-steps > .wp-block-column { flex-basis: calc(50% - .75rem) !important; border-left: 0; padding: 0; margin-bottom: 1.5rem; }
+  .nasca-valores.wp-block-columns { flex-wrap: wrap !important; row-gap: 2rem; }
+  .nasca-valores > .wp-block-column { flex-basis: calc(50% - 1.25rem) !important; }
+}
+@media (max-width: 781px) {
+  .nasca-steps > .wp-block-column, .nasca-valores > .wp-block-column { flex-basis: 100% !important; border: 0; padding: 0; }
+  .nasca-form-row { grid-template-columns: 1fr; }
+  .nasca-divider-left-light { border-left: 0; padding-left: 0; }
+  /* Línea vertical en móvil: hito, fecha y resultado apilados con línea a la izquierda */
+  .nasca-vt-row { position: relative; padding-left: 1.5rem; border-left: 1px solid rgba(255,255,255,.35); margin-bottom: 2rem !important; }
+  .nasca-vt-left h3, .nasca-vt-left p { text-align: left !important; }
+  .nasca-vt-mid::before { display: none; }
+  .nasca-vt-mid p { text-align: left; }
+  .nasca-vt-mid { order: -1; }
+  .nasca-glass { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(20,24,20,.55); }
+}
+/* Los bloques con ancho máximo de caracteres se alinean a la izquierda dentro de layouts "constrained" */
+.is-layout-constrained > .nasca-max-50, .is-layout-constrained > .nasca-max-36, .is-layout-constrained > .nasca-max-30,
+.is-layout-constrained > .nasca-max-24, .is-layout-constrained > .nasca-max-14 { margin-left: 0 !important; margin-right: auto !important; }

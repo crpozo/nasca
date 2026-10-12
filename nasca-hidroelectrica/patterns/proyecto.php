@@ -19,8 +19,8 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-stats.jpg' );
 		<div class="wp-block-columns are-vertically-aligned-bottom" style="margin-top:1rem">
 			<!-- wp:column {"verticalAlignment":"bottom","width":"60%"} -->
 			<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:60%">
-				<!-- wp:heading {"level":2,"textColor":"base","fontSize":"display"} -->
-				<h2 class="wp-block-heading has-base-color has-text-color has-display-font-size">Hidroeléctrica<br>Nasca</h2>
+				<!-- wp:heading {"level":2,"textColor":"base","fontSize":"xx-large"} -->
+				<h2 class="wp-block-heading has-base-color has-text-color has-xx-large-font-size">Hidroeléctrica<br>Nasca</h2>
 				<!-- /wp:heading -->
 			</div>
 			<!-- /wp:column -->
@@ -36,8 +36,8 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-stats.jpg' );
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":480,"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"1800px"}} -->
-	<div class="wp-block-cover" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter);min-height:520px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><div class="wp-block-cover__inner-container">
+	<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":70,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":400,"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"1800px"}} -->
+	<div class="wp-block-cover" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter);min-height:400px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim-70 has-background-dim"></span><div class="wp-block-cover__inner-container">
 		<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
 		<div class="wp-block-columns">
 			<!-- wp:column -->

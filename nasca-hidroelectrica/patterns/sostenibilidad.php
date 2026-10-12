@@ -14,8 +14,8 @@ $map = esc_url( get_template_directory_uri() . '/assets/images/mapa-intag.svg' )
 	<p class="is-style-eyebrow">02 / Sostenibilidad Real</p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:heading {"level":2,"fontSize":"display","style":{"spacing":{"margin":{"top":"1rem"}}}} -->
-	<h2 class="wp-block-heading has-display-font-size" style="margin-top:1rem">Presencia<br>constante.<br>Diálogo abierto.</h2>
+	<!-- wp:heading {"level":2,"fontSize":"xx-large","style":{"spacing":{"margin":{"top":"1rem"}}}} -->
+	<h2 class="wp-block-heading has-xx-large-font-size" style="margin-top:1rem">Presencia<br>constante.<br>Diálogo abierto.</h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:group {"style":{"spacing":{"margin":{"top":"1.5rem"}}},"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
@@ -60,7 +60,7 @@ $map = esc_url( get_template_directory_uri() . '/assets/images/mapa-intag.svg' )
 				<div class="wp-block-group nasca-community-panel">
 					<!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between","verticalAlignment":"center","flexWrap":"wrap"}} -->
 					<div class="wp-block-group">
-						<!-- wp:heading {"level":3,"fontSize":"xx-large"} --><h3 class="wp-block-heading has-xx-large-font-size">Cielo Verde</h3><!-- /wp:heading -->
+						<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"2.75rem"}}} --><h3 class="wp-block-heading" style="font-size:2.75rem">Cielo Verde</h3><!-- /wp:heading -->
 						<!-- wp:paragraph {"className":"is-style-tag","backgroundColor":"accent-2","textColor":"contrast-3","style":{"typography":{"textTransform":"none","letterSpacing":"0"}}} --><p class="is-style-tag has-contrast-3-color has-accent-2-background-color has-text-color has-background" style="letter-spacing:0;text-transform:none">85% de las personas censadas</p><!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
