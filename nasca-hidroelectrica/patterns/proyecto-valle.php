@@ -5,7 +5,7 @@
  * Categories: nasca-sections, nasca-cards
  * Description: Fondo fotográfico con título y tres tarjetas translúcidas con icono.
  */
-$img = esc_url( get_template_directory_uri() . '/assets/images/bg-valle.jpg' );
+$img = esc_url( get_template_directory_uri() . '/assets/images/bg-hero.jpg' );
 ?>
 <!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":30,"overlayColor":"contrast-3","isUserOverlayColor":true,"minHeight":600,"contentPosition":"center left","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"layout":{"type":"constrained","contentSize":"2400px","justifyContent":"left"}} -->
 <div class="wp-block-cover has-custom-content-position is-position-center-left" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter);min-height:600px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-3-background-color has-background-dim-30 has-background-dim"></span><div class="wp-block-cover__inner-container">
