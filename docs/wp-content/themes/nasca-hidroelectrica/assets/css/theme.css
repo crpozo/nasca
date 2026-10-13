@@ -556,3 +556,63 @@ h1 + p, h2 + p, h2 + .wp-block-group { margin-top: 1.5rem; }
   .nasca-news-grid > .wp-block-column { flex-basis: 100% !important; }
 }
 @media (max-width: 480px) { .nasca-com-grid { grid-template-columns: 1fr !important; } }
+
+/* ===== Ficha de comunidad ===== */
+.nasca-breadcrumb a { color: inherit; }
+.nasca-breadcrumb .wp-block-post-title { display: inline; font: inherit; color: var(--wp--preset--color--base); }
+.nasca-com-hero h1 .wp-block-post-title { display: inline; font: inherit; color: inherit; }
+.nasca-cta h2 .wp-block-post-title { display: inline; font: inherit; color: inherit; }
+.nasca-com-hero .is-style-tag-filled { margin-bottom: 0; }
+.nasca-sobre { margin-left: 0 !important; margin-right: 0 !important; }
+.nasca-sobre-foto img { width: 100%; height: auto; display: block; }
+.nasca-sobre .wp-block-column:first-child { padding-left: 0; }
+.nasca-sep-dark.wp-block-separator { border-color: rgba(255,255,255,.12); opacity: 1; margin: 2rem 0; }
+.nasca-dato-icon { display: block; width: 22px; height: 22px; color: var(--wp--preset--color--accent); margin-bottom: 1rem; }
+.nasca-dato-icon svg { width: 22px; height: 22px; }
+.nasca-datos h3 { font-weight: 400; }
+.nasca-datos .nasca-kicker { margin-top: .5rem; }
+.nasca-aportes > .wp-block-column { border-right: 1px solid var(--wp--preset--color--line); }
+.nasca-aportes > .wp-block-column:last-child { border-right: 0; }
+.nasca-aportes figure { margin: 0; }
+.nasca-aportes img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.nasca-aportes h3 { font-weight: 400; }
+.nasca-com-nav { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: 1.5rem; }
+.nasca-com-nav > * { min-width: 0; }
+.nasca-com-nav > a:first-child, .nasca-com-nav > span:first-child { justify-self: start; }
+.nasca-com-nav > a:last-child, .nasca-com-nav > span:last-child { justify-self: end; }
+.nasca-com-hero { background-color: var(--wp--preset--color--contrast-3); }
+.nasca-com-nav a { text-decoration: none; color: var(--wp--preset--color--primary); display: inline-flex; align-items: center; gap: .75rem; white-space: nowrap; }
+.nasca-com-nav small { display: block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--wp--preset--color--text-muted); }
+.nasca-com-nav strong { font-family: var(--wp--preset--font-family--heading); font-weight: 400; font-size: 22px; }
+.nasca-com-next { justify-self: end; text-align: right; }
+.nasca-com-all { background: transparent !important; border: 1px solid var(--wp--preset--color--primary); color: var(--wp--preset--color--primary) !important; font-weight: 600; }
+@media (max-width: 1100px) {
+  .nasca-sobre.wp-block-columns { flex-wrap: wrap !important; }
+  .nasca-sobre > .wp-block-column { flex-basis: 100% !important; padding-left: var(--wp--custom--gutter) !important; padding-right: var(--wp--custom--gutter) !important; }
+  .nasca-datos.wp-block-columns { flex-wrap: wrap !important; row-gap: 2rem; }
+  .nasca-datos > .wp-block-column { flex-basis: calc(50% - var(--wp--preset--spacing--40)) !important; }
+  .nasca-com-nav { grid-template-columns: 1fr 1fr; }
+  .nasca-com-nav .nasca-com-all { grid-column: 1 / -1; justify-self: center; order: 3; }
+}
+@media (max-width: 781px) {
+  .nasca-aportes.wp-block-columns { flex-wrap: wrap !important; }
+  .nasca-aportes > .wp-block-column, .nasca-datos > .wp-block-column { flex-basis: 100% !important; border-right: 0; }
+  .nasca-com-nav { grid-template-columns: 1fr; }
+  .nasca-com-next { justify-self: start; text-align: left; }
+}
+
+/* ===== Noticias y Contacto ===== */
+.nasca-cats { gap: .5rem; }
+.nasca-cat-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.nasca-cat-list li a { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: .4rem .9rem; border-radius: 999px; border: 1px solid var(--wp--preset--color--line); background: var(--wp--preset--color--base-2); color: var(--wp--preset--color--text-muted); text-decoration: none; }
+.nasca-cat-list li a:hover { border-color: var(--wp--preset--color--primary); color: var(--wp--preset--color--primary); }
+.nasca-cats .is-style-tag-filled a { color: inherit; text-decoration: none; }
+.wp-block-query-pagination a, .wp-block-query-pagination .page-numbers { color: var(--wp--preset--color--primary); font-weight: 600; text-decoration: none; padding: .4rem .6rem; }
+.wp-block-query-pagination .page-numbers.current { color: var(--wp--preset--color--contrast); border-bottom: 2px solid var(--wp--preset--color--accent); }
+.nasca-contact-item + .nasca-contact-item { margin-top: 1.5rem; }
+.nasca-contact-item p { margin: 0; }
+.nasca-contact-item a { color: var(--wp--preset--color--contrast); font-weight: 500; }
+.nasca-sedes { list-style: none; padding: 0; margin: 1rem 0 0; }
+.nasca-sedes li { padding: 1rem 0; border-top: 1px solid var(--wp--preset--color--line); color: var(--wp--preset--color--text-muted); }
+.nasca-sedes li strong { color: var(--wp--preset--color--contrast); font-weight: 600; }
+@media (max-width: 1100px) { .nasca-contacto.wp-block-columns { flex-wrap: wrap !important; } .nasca-contacto > .wp-block-column { flex-basis: 100% !important; } }

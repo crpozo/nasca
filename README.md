@@ -64,6 +64,22 @@ WPForms, Fluent Forms…) y sustituye el bloque HTML por el shortcode del formul
 
 **Preguntas frecuentes.** Usan el bloque nativo *Detalles*; duplica uno para añadir preguntas.
 
+## Comunidades (fichas)
+
+El tema registra el tipo de contenido **Comunidades** (menú lateral de WordPress). Al activar el tema se
+crean las 16 comunidades del diseño. Cada ficha se edita en Comunidades → Editar: título, imagen destacada
+(foto del hero), texto "Sobre la comunidad", foto, los tres aportes y, en el panel lateral, los **Datos
+clave** (ubicación, población, educación, salud, fuente del censo). La navegación anterior/siguiente y el
+enlace de vuelta a Sostenibilidad Real se generan solos. Las tarjetas de "Conoce las 14 Comunidades"
+enlazan a `/comunidades/nombre/`.
+
+## Noticias y Contacto
+
+**Noticias** (`/noticias/`) lista las entradas del blog con filtros por categoría y paginación; se gestiona
+desde Entradas → Añadir nueva (usa imagen destacada, categoría y extracto). Las tres últimas aparecen
+también en Sostenibilidad Real. **Contacto** (`/contacto/`) se crea al activar el tema con canales, sedes,
+formulario y mapa de Google (cambia la dirección en el bloque HTML del mapa).
+
 ## Plantillas
 
 `front-page` (home), `page`, `page-no-title`, `page-landing` (ancho completo, sin título),
