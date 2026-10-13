@@ -340,3 +340,12 @@ function nasca_spanish_months( $date, $format ) {
 	return $date;
 }
 add_filter( 'date_i18n', 'nasca_spanish_months', 10, 2 );
+
+/** Procesa shortcodes dentro de bloques HTML y párrafos (p. ej. [nasca_meta] y [nasca_comunidad_nav]). */
+function nasca_shortcodes_in_blocks( $content, $block ) {
+	if ( in_array( $block['blockName'], array( 'core/html', 'core/paragraph', 'core/heading' ), true ) && false !== strpos( $content, '[nasca_' ) ) {
+		$content = do_shortcode( $content );
+	}
+	return $content;
+}
+add_filter( 'render_block', 'nasca_shortcodes_in_blocks', 10, 2 );
