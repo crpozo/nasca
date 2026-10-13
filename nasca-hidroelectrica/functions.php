@@ -175,3 +175,43 @@ function nasca_fix_fallback_logo( $block_content, $block ) {
 	return $block_content;
 }
 add_filter( 'render_block', 'nasca_fix_fallback_logo', 10, 2 );
+
+/**
+ * Al activar el tema: crea las páginas Proyecto y Transparencia (si no existen),
+ * les asigna la plantilla a ancho completo y activa los enlaces permanentes.
+ * Las páginas quedan 100% editables desde Páginas → Editar.
+ */
+function nasca_setup_pages_on_activation() {
+	$pages = array(
+		'proyecto'      => array( 'Proyecto y Somos', 'nasca/pagina-proyecto' ),
+		'transparencia' => array( 'Transparencia y Diálogo', 'nasca/pagina-transparencia' ),
+	);
+	foreach ( $pages as $slug => $data ) {
+		if ( get_page_by_path( $slug ) ) {
+			continue;
+		}
+		$id = wp_insert_post( array(
+			'post_title'   => $data[0],
+			'post_name'    => $slug,
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_content' => '<!-- wp:pattern {"slug":"' . $data[1] . '"} /-->',
+		) );
+		if ( $id && ! is_wp_error( $id ) ) {
+			update_post_meta( $id, '_wp_page_template', 'page-landing' );
+		}
+	}
+	if ( ! get_option( 'permalink_structure' ) ) {
+		update_option( 'permalink_structure', '/%postname%/' );
+	}
+	update_option( 'nasca_flush_rewrite', 1 );
+}
+add_action( 'after_switch_theme', 'nasca_setup_pages_on_activation' );
+
+function nasca_maybe_flush_rewrite() {
+	if ( get_option( 'nasca_flush_rewrite' ) ) {
+		flush_rewrite_rules();
+		delete_option( 'nasca_flush_rewrite' );
+	}
+}
+add_action( 'init', 'nasca_maybe_flush_rewrite', 99 );

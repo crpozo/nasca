@@ -97,7 +97,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/images/bg-stats.jpg' );
 	<!-- /wp:group -->
 
 	<!-- wp:cover {"url":"<?php echo $img; ?>","dimRatio":50,"overlayColor":"contrast-3","isUserOverlayColor":true,"minHeight":160,"style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem"}}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-cover" style="padding-top:2rem;padding-bottom:2rem;min-height:160px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-3-background-color has-background-dim-50 has-background-dim"></span><div class="wp-block-cover__inner-container">
+	<div class="wp-block-cover" style="padding-top:2rem;padding-bottom:2rem;min-height:160px"><img class="wp-block-cover__image-background" alt="" src="<?php echo $img; ?>" data-object-fit="cover"/><span aria-hidden="true" class="wp-block-cover__background has-contrast-3-background-color has-background-dim"></span><div class="wp-block-cover__inner-container">
 		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 		<div class="wp-block-buttons">
 			<!-- wp:button {"className":"is-style-arrow-ghost","textColor":"base"} -->

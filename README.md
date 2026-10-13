@@ -49,11 +49,13 @@ Botón *Con flecha ↗*, *Borde + flecha ↗*, *Enlace con flecha →* · Párra
 
 ## Páginas internas (Proyecto y Somos · Transparencia)
 
-Al crear una página nueva (Páginas → Añadir nueva) WordPress ofrece los patrones de página
-**Página · Proyecto y Somos (completa)** y **Página · Transparencia y Diálogo (completa)** en la categoría
-*Nasca · Home*. Elige uno, asigna la plantilla *Landing a ancho completo* y publica con el slug
-`proyecto` o `transparencia` para que coincidan con los enlaces del menú y del pie. Cada sección también
-está disponible como patrón suelto en *Nasca · Secciones*.
+Al activar el tema se crean solas las páginas **Proyecto y Somos** (`/proyecto/`) y **Transparencia y
+Diálogo** (`/transparencia/`), ya con la plantilla *Landing a ancho completo* y los enlaces permanentes
+activados. Se editan desde Páginas → Editar como cualquier otra. Si alguna vez se borran, basta con crear
+una página nueva y elegir el patrón **Página · Proyecto y Somos (completa)** o **Página · Transparencia y
+Diálogo (completa)** (categoría *Nasca · Home*), asignarle la plantilla *Landing a ancho completo* y
+publicarla con el slug `proyecto` o `transparencia`. Cada sección también está disponible como patrón suelto
+en *Nasca · Secciones*.
 
 **Formularios.** Los tres formularios (Hojas de Vida, Bienes y Servicios, PQR) son bloques HTML con el diseño
 listo. No envían datos por sí solos: para recibir envíos instala un plugin de formularios (Contact Form 7,
