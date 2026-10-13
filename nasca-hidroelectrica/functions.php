@@ -185,6 +185,7 @@ function nasca_setup_pages_on_activation() {
 	$pages = array(
 		'proyecto'      => array( 'Proyecto y Somos', 'nasca/pagina-proyecto' ),
 		'transparencia' => array( 'Transparencia y Diálogo', 'nasca/pagina-transparencia' ),
+		'sostenibilidad-real' => array( 'Sostenibilidad Real', 'nasca/pagina-sostenibilidad' ),
 	);
 	foreach ( $pages as $slug => $data ) {
 		if ( get_page_by_path( $slug ) ) {

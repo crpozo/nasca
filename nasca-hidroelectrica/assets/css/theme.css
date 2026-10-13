@@ -510,3 +510,49 @@ h1 + p, h2 + p, h2 + .wp-block-group { margin-top: 1.5rem; }
 .is-style-hero.nasca-hero-compact { min-height: 0 !important; padding-top: clamp(4rem, 10vh, 8rem) !important; padding-bottom: clamp(4rem, 10vh, 8rem) !important; }
 
 #somos, #comunidades, #oportunidades, #pqr, #faq { scroll-margin-top: 140px; }
+
+/* ===== Sostenibilidad Real ===== */
+.nasca-quote-dark { font-family: var(--wp--preset--font-family--heading); font-size: clamp(22px, 2.3vw, 36px); line-height: 1.25; letter-spacing: -0.015em; max-width: 24ch; }
+.nasca-photo img { border-radius: 10px; width: 100%; height: auto; display: block; }
+.nasca-ejes.wp-block-columns { gap: 0; }
+.nasca-eje-num { font-family: var(--wp--preset--font-family--heading); font-size: 56px; font-weight: 300; line-height: 1; opacity: .45; margin: 0 0 1rem; }
+.nasca-eje-line.wp-block-separator { width: 40px; height: 3px; border: 0; margin: 0 0 1.25rem; opacity: 1; }
+.nasca-ejes h3 { font-weight: 400; min-height: 2.6em; }
+.nasca-kicker-strong { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin: 1.25rem 0 .35rem; }
+.nasca-stats4 > .wp-block-column { border-left: 1px solid rgba(255,255,255,.12); padding-left: var(--wp--preset--spacing--40); }
+.nasca-stats4 > .wp-block-column:first-child { border-left: 0; padding-left: 0; }
+.nasca-statbox .is-style-stat { font-size: clamp(36px, 3.2vw, 52px); }
+.nasca-news-card { overflow: hidden; }
+.nasca-news-card .wp-block-post-featured-image img { aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+.nasca-news-ph { aspect-ratio: 4/3; display: flex; align-items: flex-start; }
+.nasca-news-ph p { font-family: var(--wp--preset--font-family--heading); opacity: .9; }
+.nasca-news-card h3 { font-weight: 400; margin-top: .5rem; }
+.nasca-news-card .wp-block-post-title a { text-decoration: none; }
+.nasca-readmore, .nasca-readmore a, .wp-block-read-more.nasca-readmore { color: var(--wp--preset--color--primary); font-weight: 600; text-decoration: none; margin-top: 1.5rem; display: inline-block; }
+.nasca-news .wp-block-post-terms { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.nasca-news .wp-block-post-terms a { text-decoration: none; }
+.nasca-com-grid { gap: var(--wp--preset--spacing--30); }
+.nasca-com-card { background: var(--wp--preset--color--base-2); border: 1px solid var(--wp--preset--color--line); border-radius: 4px; overflow: hidden; transition: box-shadow .25s ease, transform .25s ease; }
+.nasca-com-card:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(20,24,20,.08); }
+.nasca-com-card figure { margin: 0; }
+.nasca-com-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.nasca-com-card .nasca-kicker { font-size: 11px; color: var(--wp--preset--color--text-muted); }
+.nasca-com-card h3 { font-weight: 400; }
+.nasca-com-card .nasca-readmore { margin-top: .25rem; }
+@media (max-width: 1100px) {
+  .nasca-ejes.wp-block-columns { flex-wrap: wrap !important; }
+  .nasca-ejes > .wp-block-column { flex-basis: 50% !important; }
+  .nasca-stats4.wp-block-columns { flex-wrap: wrap !important; row-gap: 2rem; }
+  .nasca-stats4 > .wp-block-column { flex-basis: calc(50% - var(--wp--preset--spacing--40)) !important; }
+  .nasca-stats4 > .wp-block-column:nth-child(3) { border-left: 0; padding-left: 0; }
+  .nasca-com-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .nasca-news .wp-block-post-template.is-layout-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 781px) {
+  .nasca-ejes > .wp-block-column, .nasca-stats4 > .wp-block-column { flex-basis: 100% !important; border-left: 0; padding-left: 0; }
+  .nasca-com-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .nasca-news .wp-block-post-template.is-layout-grid { grid-template-columns: 1fr !important; }
+  .nasca-news-grid.wp-block-columns { flex-wrap: wrap !important; }
+  .nasca-news-grid > .wp-block-column { flex-basis: 100% !important; }
+}
+@media (max-width: 480px) { .nasca-com-grid { grid-template-columns: 1fr !important; } }
