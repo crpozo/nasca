@@ -9,9 +9,9 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 if ( ! defined( 'NASCA_THEME_ZIP_URL' ) ) {
-	define( 'NASCA_THEME_ZIP_URL', 'https://crpozo.github.io/nasca/nasca-hidroelectrica.zip' );
+	define( 'NASCA_THEME_ZIP_URL', 'https://raw.githubusercontent.com/crpozo/nasca/refs/heads/claude/epic-galileo-scawc6/nasca-hidroelectrica.zip' );
 }
-define( 'NASCA_THEME_ZIP_URL_ALT', 'https://raw.githubusercontent.com/crpozo/nasca/claude/epic-galileo-scawc6/nasca-hidroelectrica.zip' );
+define( 'NASCA_THEME_ZIP_URL_ALT', 'https://crpozo.github.io/nasca/nasca-hidroelectrica.zip' );
 define( 'NASCA_THEME_SLUG', 'nasca-hidroelectrica' );
 
 /** Al activar: instala y registra el resultado para mostrarlo como aviso. */

@@ -351,7 +351,7 @@ function nasca_comunidad_image_url_by_slug( $slug, $kind = 'hero' ) {
 }
 
 /** Origen de las fotos que no viajan dentro del zip. */
-define( 'NASCA_REMOTE_ASSETS', 'https://raw.githubusercontent.com/crpozo/nasca/claude/epic-galileo-scawc6/nasca-hidroelectrica' );
+define( 'NASCA_REMOTE_ASSETS', 'https://raw.githubusercontent.com/crpozo/nasca/refs/heads/claude/epic-galileo-scawc6/nasca-hidroelectrica' );
 
 /** Descarga un archivo remoto al tema (una sola vez). Devuelve true si quedó guardado localmente. */
 function nasca_fetch_remote_asset( $url, $dest ) {
