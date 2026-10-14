@@ -301,30 +301,54 @@ function nasca_comunidad_nav_shortcode() {
 }
 add_shortcode( 'nasca_comunidad_nav', 'nasca_comunidad_nav_shortcode' );
 
-/** Al activar: crea las 16 comunidades si no existen (en borrador, para que el equipo complete cada ficha). */
+/** Al activar: crea las fichas de comunidad con sus textos, datos clave y foto (si no existen). */
 function nasca_create_comunidades() {
 	if ( get_posts( array( 'post_type' => 'comunidad', 'numberposts' => 1, 'post_status' => 'any', 'fields' => 'ids' ) ) ) {
 		return;
 	}
-	$names = array( 'San Francisco', 'Llurimagua', 'El Rosal', 'Limones', 'Villadorita', 'Magnolia', 'La Armenia', 'San Roque de Cajamarca', 'San Miguel del Chontal', 'El Paraíso', 'San José de Magdalena', 'El Corazón', 'Río Verde', 'Cielo Verde', 'García Moreno', 'Selva Alegre' );
-	foreach ( $names as $i => $name ) {
-		wp_insert_post( array(
-			'post_type' => 'comunidad', 'post_title' => $name, 'post_name' => sanitize_title( $name ),
-			'post_status' => 'publish', 'menu_order' => $i + 1,
+	$data = include get_template_directory() . '/inc-comunidades.php';
+	foreach ( $data as $i => $c ) {
+		list( $name, $desc, $ubic, $pobl, $educ, $salud ) = $c;
+		$slug = sanitize_title( $name );
+		$id = wp_insert_post( array(
+			'post_type' => 'comunidad', 'post_title' => $name, 'post_name' => $slug,
+			'post_status' => 'publish', 'menu_order' => $i + 1, 'post_excerpt' => $desc,
 			'post_content' => '<!-- wp:pattern {"slug":"nasca/comunidad-contenido"} /-->',
 		) );
+		if ( ! $id || is_wp_error( $id ) ) { continue; }
+		update_post_meta( $id, 'nasca_ubicacion', $ubic );
+		update_post_meta( $id, 'nasca_poblacion', $pobl );
+		update_post_meta( $id, 'nasca_educacion', $educ );
+		update_post_meta( $id, 'nasca_salud', $salud );
 	}
 }
 add_action( 'after_switch_theme', 'nasca_create_comunidades', 20 );
 
-/** Comunidad sin imagen destacada: usa la foto genérica del tema en el hero. */
-function nasca_comunidad_default_thumbnail( $html, $post_id ) {
-	if ( '' === $html && 'comunidad' === get_post_type( $post_id ) ) {
-		$html = '<img class="wp-block-cover__image-background" alt="" src="' . esc_url( get_template_directory_uri() . '/assets/images/bg-comunidad-hero.jpg' ) . '" data-object-fit="cover"/>';
+/** Foto de la comunidad: la imagen destacada si existe; si no, la foto del tema con el mismo slug; si no, la genérica. */
+function nasca_comunidad_image_url( $post_id, $kind = 'hero' ) {
+	if ( has_post_thumbnail( $post_id ) ) {
+		return get_the_post_thumbnail_url( $post_id, 'full' );
 	}
-	return $html;
+	$slug = get_post_field( 'post_name', $post_id );
+	$file = '/assets/images/' . $kind . '-' . $slug . '.jpg';
+	if ( file_exists( get_template_directory() . $file ) ) {
+		return get_template_directory_uri() . $file;
+	}
+	return get_template_directory_uri() . '/assets/images/bg-comunidad-hero.jpg';
 }
-add_filter( 'post_thumbnail_html', 'nasca_comunidad_default_thumbnail', 10, 2 );
+/** [nasca_comunidad_foto kind="com|hero"] y [nasca_descripcion] (texto del extracto). */
+add_shortcode( 'nasca_comunidad_foto', function( $a ) { $a = shortcode_atts( array( 'kind' => 'hero' ), $a ); return esc_url( nasca_comunidad_image_url( get_the_ID(), $a['kind'] ) ); } );
+add_shortcode( 'nasca_descripcion', function() { $e = get_post_field( 'post_excerpt', get_the_ID() ); return $e ? esc_html( $e ) : ''; } );
+/** Hero de la ficha: inyecta la foto (destacada o del tema). */
+function nasca_comunidad_hero_image( $content, $block ) {
+	if ( 'core/cover' === $block['blockName'] && ! empty( $block['attrs']['className'] ) && false !== strpos( $block['attrs']['className'], 'nasca-com-hero' ) && is_singular( 'comunidad' ) && false === strpos( $content, 'wp-block-cover__image-background' ) ) {
+		$img = '<img class="wp-block-cover__image-background" alt="" src="' . esc_url( nasca_comunidad_image_url( get_the_ID(), 'hero' ) ) . '" data-object-fit="cover"/>';
+		$content = preg_replace( '/(<div class="wp-block-cover[^"]*"[^>]*>)/', '$1' . $img, $content, 1 );
+	}
+	return $content;
+}
+add_filter( 'render_block', 'nasca_comunidad_hero_image', 9, 2 );
+
 
 /** Fecha en formato largo por defecto (13 de octubre de 2026) y meses en español sin paquete de idioma. */
 function nasca_default_date_format() {
@@ -344,7 +368,7 @@ add_filter( 'date_i18n', 'nasca_spanish_months', 10, 2 );
 /** Procesa shortcodes dentro de bloques HTML y párrafos (p. ej. [nasca_meta] y [nasca_comunidad_nav]). */
 function nasca_shortcodes_in_blocks( $content, $block ) {
 	if ( in_array( $block['blockName'], array( 'core/html', 'core/paragraph', 'core/heading' ), true ) && false !== strpos( $content, '[nasca_' ) ) {
-		$content = do_shortcode( $content );
+		$content = preg_replace_callback( '/\[nasca_[^\]]*\]/', function( $m ) { return do_shortcode( str_replace( '&quot;', '"', $m[0] ) ); }, $content );
 	}
 	return $content;
 }

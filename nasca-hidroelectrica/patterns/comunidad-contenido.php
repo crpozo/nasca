@@ -21,12 +21,12 @@ $base = esc_url( get_template_directory_uri() . '/assets/images/' );
 	<div class="wp-block-columns are-vertically-aligned-top nasca-sobre" style="margin-top:var(--wp--preset--spacing--50)">
 		<!-- wp:column {"verticalAlignment":"top","width":"44%"} -->
 		<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:44%">
-			<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"nasca-sobre-foto"} --><figure class="wp-block-image size-full nasca-sobre-foto"><img src="<?php echo $base; ?>foto-comunidad-1.jpg" alt=""/></figure><!-- /wp:image -->
+			<!-- wp:html --><figure class="nasca-sobre-foto"><img src="[nasca_comunidad_foto kind=&quot;com&quot;]" alt=""/></figure><!-- /wp:html -->
 		</div>
 		<!-- /wp:column -->
 		<!-- wp:column {"verticalAlignment":"top","width":"56%","style":{"spacing":{"padding":{"right":"var:custom|gutter"}}}} -->
 		<div class="wp-block-column is-vertically-aligned-top" style="padding-right:var(--wp--custom--gutter);flex-basis:56%">
-			<!-- wp:paragraph {"fontSize":"large","style":{"typography":{"lineHeight":"1.7"}}} --><p class="has-large-font-size" style="line-height:1.7">Fundada en 1934 en la parroquia rural de Selva Alegre, San Francisco es una comunidad campesina caracterizada por su tranquilidad y arraigo a la tierra. Sus familias se dedican tradicionalmente a la agricultura diversificada de ciclo corto y a la ganadería menor, manteniendo una estrecha relación con el entorno fluvial y el trabajo colaborativo en sus caminos vecinales.</p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"fontSize":"large","style":{"typography":{"lineHeight":"1.7"}}} --><p class="has-large-font-size" style="line-height:1.7">[nasca_descripcion]</p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 	</div>

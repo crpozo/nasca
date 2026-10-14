@@ -7,6 +7,7 @@
  */
 $base = esc_url( get_template_directory_uri() . '/assets/images/' );
 $comunidades = array( 'San Francisco', 'Llurimagua', 'El Rosal', 'Limones', 'Villadorita', 'Magnolia', 'La Armenia', 'San Roque de Cajamarca', 'San Miguel del Chontal', 'El Paraíso', 'San José de Magdalena', 'El Corazón', 'Río Verde', 'Cielo Verde', 'García Moreno', 'Selva Alegre' );
+$fallback = esc_url( get_template_directory_uri() . '/assets/images/bg-comunidad-hero.jpg' );
 ?>
 <!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:custom|gutter","right":"var:custom|gutter"}}},"backgroundColor":"base-2","layout":{"type":"constrained","contentSize":"2400px"}} -->
 <section id="comunidades" class="wp-block-group has-base-2-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--custom--gutter);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--custom--gutter)">
@@ -29,9 +30,9 @@ $comunidades = array( 'San Francisco', 'Llurimagua', 'El Rosal', 'Limones', 'Vil
 	<!-- wp:group {"className":"nasca-com-grid","style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}},"layout":{"type":"grid","columnCount":5,"minimumColumnWidth":null}} -->
 	<div class="wp-block-group nasca-com-grid" style="margin-top:var(--wp--preset--spacing--50)">
 <?php foreach ( $comunidades as $i => $name ) : $slug = sanitize_title( $name ); $n = sprintf( '%02d', $i + 1 ); ?>
-		<!-- wp:group {"className":"nasca-com-card","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
-		<div class="wp-block-group nasca-com-card" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-			<!-- wp:image {"sizeSlug":"full","linkDestination":"custom"} --><figure class="wp-block-image size-full"><a href="/comunidades/<?php echo $slug; ?>/"><img src="<?php echo $base; ?>comunidad-<?php echo $n; ?>.jpg" alt="<?php echo esc_attr( $name ); ?>"/></a></figure><!-- /wp:image -->
+		<!-- wp:group {"className":"nasca-com-card nasca-clickable","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
+		<div class="wp-block-group nasca-com-card nasca-clickable" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+			<!-- wp:html --><figure class="nasca-com-fig"><a href="/comunidades/<?php echo $slug; ?>/"><img src="<?php echo file_exists( get_template_directory() . '/assets/images/com-' . $slug . '.jpg' ) ? $base . 'com-' . $slug . '.jpg' : $fallback; ?>" alt="<?php echo esc_attr( $name ); ?>"/></a></figure><!-- /wp:html -->
 			<!-- wp:group {"style":{"spacing":{"padding":{"top":"1.25rem","bottom":"1.5rem","left":"1.5rem","right":"1.5rem"},"blockGap":"0.4rem"}},"layout":{"type":"default"}} -->
 			<div class="wp-block-group" style="padding-top:1.25rem;padding-right:1.5rem;padding-bottom:1.5rem;padding-left:1.5rem">
 				<!-- wp:paragraph {"className":"nasca-kicker"} --><p class="nasca-kicker">Área de Influencia Directa</p><!-- /wp:paragraph -->
