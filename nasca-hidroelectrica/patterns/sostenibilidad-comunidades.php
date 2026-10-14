@@ -32,7 +32,7 @@ $fallback = esc_url( get_template_directory_uri() . '/assets/images/bg-comunidad
 <?php foreach ( $comunidades as $i => $name ) : $slug = sanitize_title( $name ); $n = sprintf( '%02d', $i + 1 ); ?>
 		<!-- wp:group {"className":"nasca-com-card nasca-clickable","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
 		<div class="wp-block-group nasca-com-card nasca-clickable" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-			<!-- wp:html --><figure class="nasca-com-fig"><a href="/comunidades/<?php echo $slug; ?>/"><img src="<?php echo file_exists( get_template_directory() . '/assets/images/com-' . $slug . '.jpg' ) ? $base . 'com-' . $slug . '.jpg' : $fallback; ?>" alt="<?php echo esc_attr( $name ); ?>"/></a></figure><!-- /wp:html -->
+			<!-- wp:html --><figure class="nasca-com-fig"><a href="/comunidades/<?php echo $slug; ?>/"><img src="<?php echo esc_url( nasca_comunidad_image_url_by_slug( $slug, 'com' ) ); ?>" alt="<?php echo esc_attr( $name ); ?>"/></a></figure><!-- /wp:html -->
 			<!-- wp:group {"style":{"spacing":{"padding":{"top":"1.25rem","bottom":"1.5rem","left":"1.5rem","right":"1.5rem"},"blockGap":"0.4rem"}},"layout":{"type":"default"}} -->
 			<div class="wp-block-group" style="padding-top:1.25rem;padding-right:1.5rem;padding-bottom:1.5rem;padding-left:1.5rem">
 				<!-- wp:paragraph {"className":"nasca-kicker"} --><p class="nasca-kicker">Área de Influencia Directa</p><!-- /wp:paragraph -->
