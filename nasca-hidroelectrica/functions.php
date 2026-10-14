@@ -349,3 +349,7 @@ function nasca_shortcodes_in_blocks( $content, $block ) {
 	return $content;
 }
 add_filter( 'render_block', 'nasca_shortcodes_in_blocks', 10, 2 );
+
+/** [nasca_title]: título de la entrada actual en texto plano. */
+function nasca_title_shortcode() { return esc_html( get_the_title() ); }
+add_shortcode( 'nasca_title', 'nasca_title_shortcode' );

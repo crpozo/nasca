@@ -619,3 +619,6 @@ h1 + p, h2 + p, h2 + .wp-block-group { margin-top: 1.5rem; }
 .nasca-sedes li { padding: 1rem 0; border-top: 1px solid var(--wp--preset--color--line); color: var(--wp--preset--color--text-muted); }
 .nasca-sedes li strong { color: var(--wp--preset--color--contrast); font-weight: 600; }
 @media (max-width: 1100px) { .nasca-contacto.wp-block-columns { flex-wrap: wrap !important; } .nasca-contacto > .wp-block-column { flex-basis: 100% !important; } }
+
+.nasca-crumbs { margin: 0; color: var(--wp--preset--color--text-muted-dark); }
+.nasca-crumbs a, .nasca-crumbs span { color: inherit; }
