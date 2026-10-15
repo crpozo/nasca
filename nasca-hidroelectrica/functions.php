@@ -338,20 +338,14 @@ function nasca_comunidad_image_url_by_slug( $slug, $kind = 'hero' ) {
 	if ( file_exists( get_template_directory() . $file ) ) {
 		return get_template_directory_uri() . $file;
 	}
-	// Foto no incluida en el zip (para que pese poco): se descarga una vez desde el repositorio del tema.
-	$remote = NASCA_REMOTE_ASSETS . $file;
-	if ( nasca_fetch_remote_asset( $remote, get_template_directory() . $file ) ) {
-		return get_template_directory_uri() . $file;
-	}
-	$known = get_transient( 'nasca_remote_' . md5( $remote ) );
-	if ( 'ok' === $known ) {
-		return $remote;
+	if ( in_array( $kind . '-' . $slug . '.jpg', nasca_missing_images(), true ) ) {
+		return NASCA_REMOTE_ASSETS . $file; // Aún no descargada: se sirve desde el repositorio.
 	}
 	return get_template_directory_uri() . '/assets/images/bg-comunidad-hero.jpg';
 }
 
 /** Origen de las fotos que no viajan dentro del zip. */
-define( 'NASCA_REMOTE_ASSETS', 'https://raw.githubusercontent.com/crpozo/nasca/refs/heads/claude/epic-galileo-scawc6/nasca-hidroelectrica' );
+if ( ! defined( 'NASCA_REMOTE_ASSETS' ) ) define( 'NASCA_REMOTE_ASSETS', 'https://raw.githubusercontent.com/crpozo/nasca/refs/heads/claude/epic-galileo-scawc6/nasca-hidroelectrica' );
 
 /** Descarga un archivo remoto al tema (una sola vez). Devuelve true si quedó guardado localmente. */
 function nasca_fetch_remote_asset( $url, $dest ) {
@@ -364,7 +358,7 @@ function nasca_fetch_remote_asset( $url, $dest ) {
 		set_transient( $key, 'ok', DAY_IN_SECONDS ); // No se puede escribir: se usará la URL remota.
 		return false;
 	}
-	$res = wp_remote_get( $url, array( 'timeout' => 15 ) );
+	$res = wp_remote_get( $url, array( 'timeout' => 20 ) );
 	if ( is_wp_error( $res ) || 200 !== wp_remote_retrieve_response_code( $res ) ) {
 		set_transient( $key, 'fail', HOUR_IN_SECONDS );
 		return false;
@@ -376,6 +370,68 @@ function nasca_fetch_remote_asset( $url, $dest ) {
 	}
 	return true;
 }
+
+/** Fotos del manifiesto que todavía no están en assets/images. */
+function nasca_missing_images() {
+	static $missing = null;
+	if ( null !== $missing ) {
+		return $missing;
+	}
+	$missing = array();
+	if ( get_transient( 'nasca_images_complete' ) ) {
+		return $missing;
+	}
+	$dir = get_template_directory() . '/assets/images/';
+	foreach ( (array) include get_template_directory() . '/inc-imagenes.php' as $name ) {
+		if ( ! file_exists( $dir . $name ) ) {
+			$missing[] = $name;
+		}
+	}
+	if ( empty( $missing ) ) {
+		set_transient( 'nasca_images_complete', 1, WEEK_IN_SECONDS );
+	}
+	return $missing;
+}
+
+/** Descarga hasta $max fotos faltantes en esta petición. */
+function nasca_fetch_missing_images( $max = 3 ) {
+	$missing = nasca_missing_images();
+	if ( empty( $missing ) || get_transient( 'nasca_images_lock' ) ) {
+		return;
+	}
+	set_transient( 'nasca_images_lock', 1, 30 );
+	$dir = get_template_directory() . '/assets/images/';
+	$n   = 0;
+	foreach ( $missing as $name ) {
+		if ( $n >= $max ) {
+			break;
+		}
+		if ( nasca_fetch_remote_asset( NASCA_REMOTE_ASSETS . '/assets/images/' . $name, $dir . $name ) ) {
+			$n++;
+		}
+	}
+	delete_transient( 'nasca_images_lock' );
+}
+add_action( 'after_switch_theme', function () { nasca_fetch_missing_images( 12 ); }, 30 );
+add_action( 'admin_init', function () { nasca_fetch_missing_images( 6 ); } );
+add_action( 'template_redirect', function () { nasca_fetch_missing_images( 3 ); } );
+
+/** Mientras una foto no esté en el servidor, se muestra directamente desde el repositorio. */
+function nasca_remote_image_fallback( $html ) {
+	$missing = nasca_missing_images();
+	if ( empty( $missing ) || ! is_string( $html ) || false === strpos( $html, '/assets/images/' ) ) {
+		return $html;
+	}
+	$local  = get_template_directory_uri() . '/assets/images/';
+	$remote = NASCA_REMOTE_ASSETS . '/assets/images/';
+	foreach ( $missing as $name ) {
+		$html = str_replace( $local . $name, $remote . $name, $html );
+	}
+	return $html;
+}
+add_filter( 'render_block', 'nasca_remote_image_fallback', 20 );
+add_filter( 'the_content', 'nasca_remote_image_fallback', 20 );
+
 /** [nasca_comunidad_foto kind="com|hero"] y [nasca_descripcion] (texto del extracto). */
 add_shortcode( 'nasca_comunidad_foto', function( $a ) { $a = shortcode_atts( array( 'kind' => 'hero' ), $a ); return esc_url( nasca_comunidad_image_url( get_the_ID(), $a['kind'] ) ); } );
 add_shortcode( 'nasca_descripcion', function() { $e = get_post_field( 'post_excerpt', get_the_ID() ); return $e ? esc_html( $e ) : ''; } );
