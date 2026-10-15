@@ -385,7 +385,8 @@ function nasca_fetch_remote_asset( $url, $dest ) {
 		return false;
 	}
 	$body = wp_remote_retrieve_body( $res );
-	if ( strlen( $body ) < 1000 || false === file_put_contents( $dest, $body ) ) {
+	$es_jpeg = "\xFF\xD8" === substr( $body, 0, 2 );
+	if ( strlen( $body ) < 1000 || ! $es_jpeg || false === file_put_contents( $dest, $body ) ) {
 		set_transient( $key, 'fail', HOUR_IN_SECONDS );
 		return false;
 	}
@@ -404,7 +405,11 @@ function nasca_missing_images() {
 	}
 	$dir = get_template_directory() . '/assets/images/';
 	foreach ( (array) include get_template_directory() . '/inc-imagenes.php' as $name ) {
-		if ( ! file_exists( $dir . $name ) ) {
+		$f = $dir . $name;
+		if ( ! file_exists( $f ) ) {
+			$missing[] = $name;
+		} elseif ( filesize( $f ) < 1000 || "\xFF\xD8" !== file_get_contents( $f, false, null, 0, 2 ) ) {
+			@unlink( $f );
 			$missing[] = $name;
 		}
 	}
@@ -444,6 +449,7 @@ function nasca_remote_image_fallback( $html ) {
 		return $html;
 	}
 	$local  = get_template_directory_uri() . '/assets/images/';
+	// También se eliminan descargas corruptas (archivos que no son JPEG) para volver a intentarlo.
 	$remote = NASCA_REMOTE_ASSETS . '/assets/images/';
 	foreach ( $missing as $name ) {
 		$html = str_replace( $local . $name, $remote . $name, $html );
