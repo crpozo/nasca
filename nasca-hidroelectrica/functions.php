@@ -536,3 +536,36 @@ add_filter( 'render_block', 'nasca_shortcodes_in_blocks', 10, 2 );
 /** [nasca_title]: título de la entrada actual en texto plano. */
 function nasca_title_shortcode() { return esc_html( get_the_title() ); }
 add_shortcode( 'nasca_title', 'nasca_title_shortcode' );
+
+/**
+ * Favicon de Nasca cuando no se ha configurado un "Icono del sitio" en Apariencia → Editor → Estilos
+ * (o Ajustes → Generales). Si se configura uno, WordPress usa ese y este se omite.
+ */
+function nasca_favicon() {
+	if ( has_site_icon() ) {
+		return;
+	}
+	$base = esc_url( get_template_directory_uri() . '/assets/images/' );
+	echo '<link rel="icon" href="' . $base . 'favicon.ico" sizes="any">' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="32x32" href="' . $base . 'favicon-32.png">' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="192x192" href="' . $base . 'favicon-192.png">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . $base . 'apple-touch-icon.png">' . "\n";
+}
+add_action( 'wp_head', 'nasca_favicon', 1 );
+add_action( 'admin_head', 'nasca_favicon', 1 );
+add_action( 'login_head', 'nasca_favicon', 1 );
+
+/** Logo de Nasca en la pantalla de inicio de sesión de WordPress. */
+function nasca_login_logo() {
+	$logo = esc_url( get_template_directory_uri() . '/assets/images/logo-nasca-1.png' );
+	echo '<style>
+	body.login { background: #1C1F1C; }
+	body.login h1 a { background-image: url(' . $logo . '); background-size: contain; width: 220px; height: 80px; }
+	body.login #loginform { border-radius: 16px; border: 0; }
+	body.login .button-primary { background: #4C2A85; border-color: #4C2A85; border-radius: 999px; }
+	body.login #backtoblog a, body.login #nav a, body.login .privacy-policy-link { color: #d9cdf0; }
+	</style>';
+}
+add_action( 'login_enqueue_scripts', 'nasca_login_logo' );
+add_filter( 'login_headerurl', function () { return home_url( '/' ); } );
+add_filter( 'login_headertext', function () { return get_bloginfo( 'name' ); } );
