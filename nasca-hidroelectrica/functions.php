@@ -360,7 +360,7 @@ function nasca_comunidad_image_url_by_slug( $slug, $kind = 'hero' ) {
 		return get_template_directory_uri() . $file;
 	}
 	if ( in_array( $kind . '-' . $slug . '.jpg', nasca_missing_images(), true ) ) {
-		return NASCA_REMOTE_ASSETS . $file; // Aún no descargada: se sirve desde el repositorio.
+		return nasca_missing_image_url( $kind . '-' . $slug . '.jpg' ); // Desde Medios o desde el repositorio.
 	}
 	return get_template_directory_uri() . '/assets/images/bg-comunidad-hero.jpg';
 }
@@ -391,6 +391,41 @@ function nasca_fetch_remote_asset( $url, $dest ) {
 		return false;
 	}
 	return true;
+}
+
+/**
+ * Busca una foto del tema en la Biblioteca de medios (subida con el mismo nombre de archivo).
+ * Si la encuentra la copia a assets/images y devuelve la ruta local; si no puede copiar, devuelve su URL.
+ */
+function nasca_image_from_media( $name ) {
+	global $wpdb;
+	static $cache = array();
+	if ( array_key_exists( $name, $cache ) ) {
+		return $cache[ $name ];
+	}
+	$base = preg_replace( '/\\.jpg$/', '', $name );
+	$row  = $wpdb->get_row( $wpdb->prepare(
+		"SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND ( meta_value LIKE %s OR meta_value LIKE %s OR meta_value LIKE %s ) ORDER BY post_id DESC LIMIT 1",
+		'%/' . $wpdb->esc_like( $name ),
+		'%/' . $wpdb->esc_like( $base ) . '-%.jpg',
+		'%/' . $wpdb->esc_like( $base ) . '.jpeg'
+	) );
+	if ( ! $row ) {
+		return $cache[ $name ] = '';
+	}
+	$uploads = wp_get_upload_dir();
+	$src     = trailingslashit( $uploads['basedir'] ) . $row->meta_value;
+	$dest    = get_template_directory() . '/assets/images/' . $name;
+	if ( file_exists( $src ) && wp_is_writable( dirname( $dest ) ) && @copy( $src, $dest ) ) {
+		return $cache[ $name ] = get_template_directory_uri() . '/assets/images/' . $name;
+	}
+	return $cache[ $name ] = trailingslashit( $uploads['baseurl'] ) . $row->meta_value;
+}
+
+/** URL a usar para una foto que no está en assets/images: la de Medios si existe, si no la del repositorio. */
+function nasca_missing_image_url( $name ) {
+	$media = nasca_image_from_media( $name );
+	return $media ? $media : NASCA_REMOTE_ASSETS . '/assets/images/' . $name;
 }
 
 /** Fotos del manifiesto que todavía no están en assets/images. */
@@ -432,6 +467,9 @@ function nasca_fetch_missing_images( $max = 3 ) {
 		if ( $n >= $max ) {
 			break;
 		}
+		if ( nasca_image_from_media( $name ) && file_exists( $dir . $name ) ) {
+			continue; // Copiada desde la Biblioteca de medios.
+		}
 		if ( nasca_fetch_remote_asset( NASCA_REMOTE_ASSETS . '/assets/images/' . $name, $dir . $name ) ) {
 			$n++;
 		}
@@ -448,11 +486,9 @@ function nasca_remote_image_fallback( $html ) {
 	if ( empty( $missing ) || ! is_string( $html ) || false === strpos( $html, '/assets/images/' ) ) {
 		return $html;
 	}
-	$local  = get_template_directory_uri() . '/assets/images/';
-	// También se eliminan descargas corruptas (archivos que no son JPEG) para volver a intentarlo.
-	$remote = NASCA_REMOTE_ASSETS . '/assets/images/';
+	$local = get_template_directory_uri() . '/assets/images/';
 	foreach ( $missing as $name ) {
-		$html = str_replace( $local . $name, $remote . $name, $html );
+		$html = str_replace( $local . $name, nasca_missing_image_url( $name ), $html );
 	}
 	return $html;
 }
