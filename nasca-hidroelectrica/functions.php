@@ -189,7 +189,12 @@ function nasca_setup_pages_on_activation() {
 		'contacto'      => array( 'Contacto', 'nasca/pagina-contacto' ),
 	);
 	// Página "Noticias" como página de entradas del blog.
-	if ( ! get_page_by_path( 'noticias' ) ) {
+	$noticias = get_page_by_path( 'noticias' );
+	if ( $noticias && (int) get_option( 'page_for_posts' ) !== (int) $noticias->ID ) {
+		update_option( 'page_for_posts', $noticias->ID );
+		update_option( 'show_on_front', 'page' );
+	}
+	if ( ! $noticias ) {
 		$blog = wp_insert_post( array( 'post_title' => 'Noticias', 'post_name' => 'noticias', 'post_type' => 'page', 'post_status' => 'publish', 'post_content' => '' ) );
 		if ( $blog && ! is_wp_error( $blog ) ) {
 			update_option( 'page_for_posts', $blog );
@@ -222,6 +227,22 @@ function nasca_setup_pages_on_activation() {
 	update_option( 'nasca_flush_rewrite', 1 );
 }
 add_action( 'after_switch_theme', 'nasca_setup_pages_on_activation' );
+
+/**
+ * Si el tema se actualiza reemplazando la versión anterior (sin desactivarlo), WordPress no dispara
+ * la activación. Por eso, cuando cambia la versión del tema se vuelve a ejecutar la configuración:
+ * crea las páginas y comunidades que falten, ajusta enlaces permanentes y descarga fotos.
+ */
+function nasca_ensure_setup() {
+	$version = wp_get_theme( get_template() )->get( 'Version' );
+	if ( get_option( 'nasca_setup_version' ) === $version ) {
+		return;
+	}
+	update_option( 'nasca_setup_version', $version );
+	do_action( 'after_switch_theme', get_stylesheet(), wp_get_theme() );
+}
+add_action( 'admin_init', 'nasca_ensure_setup', 5 );
+add_action( 'template_redirect', 'nasca_ensure_setup', 5 );
 
 function nasca_maybe_flush_rewrite() {
 	if ( get_option( 'nasca_flush_rewrite' ) ) {
